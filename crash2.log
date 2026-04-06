@@ -1,0 +1,565 @@
+﻿--------- beginning of crash
+03-13 14:16:50.032  1032  1032 I libpq_sec: mtk-brm-commit-id:8d52b75ecea4b0c2129c05428261104d5b4c7e6f
+03-13 14:16:50.032  1032  1032 I libpq_sec: mtk-brm-change-id:Idfe06ff5198c0d6cc7248bb4a94299f37013c3e3
+03-13 14:16:50.032  1032  1032 I libpq_sec: mtk-brm-merge-id:none
+03-13 14:16:50.039  1038  1038 I libpq_sec: mtk-brm-commit-id:8d52b75ecea4b0c2129c05428261104d5b4c7e6f
+03-13 14:16:50.039  1038  1038 I libpq_sec: mtk-brm-change-id:Idfe06ff5198c0d6cc7248bb4a94299f37013c3e3
+03-13 14:16:50.039  1038  1038 I libpq_sec: mtk-brm-merge-id:none
+03-13 14:16:50.211  1099  1099 I liboemcrypto: mtk-brm-commit-id:42dd6e7f89438f3318124f9493ca62ece27e05cf
+03-13 14:16:50.211  1099  1099 I liboemcrypto: mtk-brm-change-id:Ifa8f19c763601e53c5a662fc54eb11853ade09e0
+03-13 14:16:50.211  1099  1099 I liboemcrypto: mtk-brm-merge-id:none
+03-13 14:16:50.273  1114  1203 I meow_lib: mtk-brm-commit-id:75cae65534b8c9848b9772485188383d28b67130
+03-13 14:16:50.273  1114  1203 I meow_lib: mtk-brm-change-id:I18c004bf864f9dbfe4d108f467564e40aaa8d160
+03-13 14:16:50.273  1114  1203 I meow_lib: mtk-brm-merge-id:none
+03-13 14:16:50.285  1114  1203 I libged  : mtk-brm-commit-id:8f279a13f0709684183c66949c3aedba30471847
+03-13 14:16:50.285  1114  1203 I libged  : mtk-brm-change-id:I9678c768ba1e3699d9c1b78051980c2e6eb41dfa
+03-13 14:16:50.285  1114  1203 I libged  : mtk-brm-merge-id:none
+03-13 14:16:50.294  1114  1203 I libGLES_mali: mtk-brm-commit-id:e78edd2fdf38cacb9869c88ed92681836cbf8e00
+03-13 14:16:50.294  1114  1203 I libGLES_mali: mtk-brm-change-id:I2fd435266d7e8eadf0bdf45a2881b673239705c1
+03-13 14:16:50.294  1114  1203 I libGLES_mali: mtk-brm-merge-id:none
+03-13 14:16:50.404  1249  1249 I libneuralnetworks_sl_driver: mtk-brm-commit-id:161f105d8fdcda4d5f9ff10858623788849cd706
+03-13 14:16:50.405  1249  1249 I libneuralnetworks_sl_driver: mtk-brm-change-id:I3cc60e15bedb425deae97e4ba62ce9795469d0f0
+03-13 14:16:50.405  1249  1249 I libneuralnetworks_sl_driver: mtk-brm-merge-id:none
+03-13 14:16:50.405  1249  1249 I neuralnetworks_shim: mtk-brm-commit-id:25a38658d8fcdbb20664f319d3ecf9d75fd3654c
+03-13 14:16:50.405  1249  1249 I neuralnetworks_shim: mtk-brm-change-id:I98bca291cad1df955fc3a2dd4a672c689604df9b
+03-13 14:16:50.405  1249  1249 I neuralnetworks_shim: mtk-brm-merge-id:none
+03-13 14:16:50.420  1268  1268 I thermal_core: mtk-brm-commit-id:234641ae27aad1cfcf52a5ba536c107c965a52ab
+03-13 14:16:50.420  1268  1268 I thermal_core: mtk-brm-change-id:Ieb2106d5ec215adedae5ff15a92923dc35fdb2bc
+03-13 14:16:50.420  1268  1268 I thermal_core: mtk-brm-merge-id:none
+03-13 14:16:50.461  1249  1249 I cpu_nn  : mtk-brm-commit-id:e0b1e6a299e09326d1e3c00df0bee88777f15fb0
+03-13 14:16:50.461  1249  1249 I cpu_nn  : mtk-brm-change-id:Ia06225ca2806a5f28be95902c2303b12e9a90c38
+03-13 14:16:50.461  1249  1249 I cpu_nn  : mtk-brm-merge-id:none
+03-13 14:16:50.467  1247  1247 I libimsma_adapt: mtk-brm-commit-id:8783a29bae0ae84a456239f3212f27bdafa94c91
+03-13 14:16:50.467  1247  1247 I libimsma_adapt: mtk-brm-change-id:Iee598bb542f5de895a4b71649fbc79b2d93bc3de
+03-13 14:16:50.467  1247  1247 I libimsma_adapt: mtk-brm-merge-id:none
+03-13 14:16:50.485  1249  1249 I cmdl    : mtk-brm-commit-id:83b79bc206164073c4933dac9048e8bbf2468a2f
+03-13 14:16:50.485  1249  1249 I cmdl    : mtk-brm-change-id:I3f996dc2e36f9014a83a3c7740956ca173b56f36
+03-13 14:16:50.485  1249  1249 I cmdl    : mtk-brm-merge-id:none
+03-13 14:16:50.488  1249  1249 I gpu_nn  : mtk-brm-commit-id:0b5fce9d2ecbb9be75db033475f121621364bbd0
+03-13 14:16:50.490  1249  1249 I gpu_nn  : mtk-brm-change-id:Icf488c65b434d1938ee3d916fb07216f278b708b
+03-13 14:16:50.490  1249  1249 I gpu_nn  : mtk-brm-merge-id:none
+03-13 14:16:50.505  1312  1312 I emdlogger: mtk-brm-commit-id:d0df48aa8f322c846a0ee2934fb5db5ae2bfa375
+03-13 14:16:50.505  1312  1312 I emdlogger: mtk-brm-change-id:If94188b9963eb72d8d14a663ce767eefa5d45906
+03-13 14:16:50.505  1312  1312 I emdlogger: mtk-brm-merge-id:none
+03-13 14:16:50.615  1365  1365 I libpq_sec: mtk-brm-commit-id:8d52b75ecea4b0c2129c05428261104d5b4c7e6f
+03-13 14:16:50.615  1365  1365 I libpq_sec: mtk-brm-change-id:Idfe06ff5198c0d6cc7248bb4a94299f37013c3e3
+03-13 14:16:50.615  1365  1365 I libpq_sec: mtk-brm-merge-id:none
+03-13 14:16:50.665  1363  1363 I libpq_sec: mtk-brm-commit-id:8d52b75ecea4b0c2129c05428261104d5b4c7e6f
+03-13 14:16:50.665  1363  1363 I libpq_sec: mtk-brm-change-id:Idfe06ff5198c0d6cc7248bb4a94299f37013c3e3
+03-13 14:16:50.665  1363  1363 I libpq_sec: mtk-brm-merge-id:none
+03-13 14:16:50.994  1543  1588 I meow_lib: mtk-brm-commit-id:75cae65534b8c9848b9772485188383d28b67130
+03-13 14:16:50.994  1543  1588 I meow_lib: mtk-brm-change-id:I18c004bf864f9dbfe4d108f467564e40aaa8d160
+03-13 14:16:50.994  1543  1588 I meow_lib: mtk-brm-merge-id:none
+03-13 14:16:51.365  1017  1017 I meow_lib: mtk-brm-commit-id:75cae65534b8c9848b9772485188383d28b67130
+03-13 14:16:51.365  1017  1017 I meow_lib: mtk-brm-change-id:I18c004bf864f9dbfe4d108f467564e40aaa8d160
+03-13 14:16:51.365  1017  1017 I meow_lib: mtk-brm-merge-id:none
+03-13 14:16:52.237  1324  1324 I caics_algo: mtk-brm-commit-id:13b5f2a1ebbecb82e3898dd41922f70f199e50ff
+03-13 14:16:52.237  1324  1324 I caics_algo: mtk-brm-change-id:I4260c971d731b542818aac96725266c809617407
+03-13 14:16:52.237  1324  1324 I caics_algo: mtk-brm-merge-id:none
+03-13 14:16:52.237  1324  1324 I vaics_algo: mtk-brm-commit-id:13b5f2a1ebbecb82e3898dd41922f70f199e50ff
+03-13 14:16:52.237  1324  1324 I vaics_algo: mtk-brm-change-id:I4260c971d731b542818aac96725266c809617407
+03-13 14:16:52.237  1324  1324 I vaics_algo: mtk-brm-merge-id:none
+03-13 14:16:52.245  1324  1324 I mcnr_algo: mtk-brm-commit-id:dd4929e6a71bd0be06b2d18234833692e8dec44f
+03-13 14:16:52.245  1324  1324 I mcnr_algo: mtk-brm-change-id:I4260c971d731b542818aac96725266c809617407
+03-13 14:16:52.245  1324  1324 I mcnr_algo: mtk-brm-merge-id:none
+03-13 14:16:52.321  1324  1324 I libpq_sec: mtk-brm-commit-id:8d52b75ecea4b0c2129c05428261104d5b4c7e6f
+03-13 14:16:52.321  1324  1324 I libpq_sec: mtk-brm-change-id:Idfe06ff5198c0d6cc7248bb4a94299f37013c3e3
+03-13 14:16:52.321  1324  1324 I libpq_sec: mtk-brm-merge-id:none
+03-13 14:16:59.958  3529  3529 I thermal_core: mtk-brm-commit-id:16e747b984ec32cb07ea2dbc6be83fa411cba782
+03-13 14:16:59.958  3529  3529 I thermal_core: mtk-brm-change-id:I57f0cbd2fde7ffbc3b064f8c6a2f425a4c6b5e28
+03-13 14:16:59.958  3529  3529 I thermal_core: mtk-brm-merge-id:none
+03-13 14:17:22.227  1316  9323 I meow_lib: mtk-brm-commit-id:75cae65534b8c9848b9772485188383d28b67130
+03-13 14:17:22.227  1316  9323 I meow_lib: mtk-brm-change-id:I18c004bf864f9dbfe4d108f467564e40aaa8d160
+03-13 14:17:22.227  1316  9323 I meow_lib: mtk-brm-merge-id:none
+03-17 23:12:13.944  9383 12934 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0xc0 in tid 12934 (AsyncTask #1), pid 9383 (ali98.ChatterUI)
+03-17 23:12:15.172 26301 26301 F DEBUG   : *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+03-17 23:12:15.172 26301 26301 F DEBUG   : Build fingerprint: 'Infinix/X6873-OP/Infinix-X6873:15/AP3A.240905.015.A2/145008:user/release-keys'
+03-17 23:12:15.172 26301 26301 F DEBUG   : Revision: '0'
+03-17 23:12:15.172 26301 26301 F DEBUG   : ABI: 'arm64'
+03-17 23:12:15.172 26301 26301 F DEBUG   : Timestamp: 2026-03-17 23:12:14.172207587+0700
+03-17 23:12:15.172 26301 26301 F DEBUG   : Process uptime: 1724s
+03-17 23:12:15.172 26301 26301 F DEBUG   : Cmdline: com.Vali98.ChatterUI
+03-17 23:12:15.172 26301 26301 F DEBUG   : pid: 9383, tid: 12934, name: AsyncTask #1  >>> com.Vali98.ChatterUI <<<
+03-17 23:12:15.172 26301 26301 F DEBUG   : uid: 10335
+03-17 23:12:15.172 26301 26301 F DEBUG   : tagged_addr_ctrl: 0000000000000001 (PR_TAGGED_ADDR_ENABLE)
+03-17 23:12:15.172 26301 26301 F DEBUG   : pac_enabled_keys: 000000000000000f (PR_PAC_APIAKEY, PR_PAC_APIBKEY, PR_PAC_APDAKEY, PR_PAC_APDBKEY)
+03-17 23:12:15.172 26301 26301 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x00000000000000c0
+03-17 23:12:15.172 26301 26301 F DEBUG   : Cause: null pointer dereference
+03-17 23:12:15.172 26301 26301 F DEBUG   :     x0  00000000ffffffff  x1  0000006cb90b3f07  x2  0000000000000013  x3  524f49445f4a4e49
+03-17 23:12:15.172 26301 26301 F DEBUG   :     x4  524f49445f4a4e49  x5  494e4a5f44494f52  x6  494e4a5f44494f52  x7  b400006f2d2b8263
+03-17 23:12:15.172 26301 26301 F DEBUG   :     x8  3d401eacb623ab86  x9  3d401eacb623ab86  x10 0000000000000069  x11 ffffffffffffffff
+03-17 23:12:15.172 26301 26301 F DEBUG   :     x12 0000000000000049  x13 00000000fffffffc  x14 0000000000000000  x15 000000003fffffff
+03-17 23:12:15.172 26301 26301 F DEBUG   :     x16 00000070a3df1428  x17 00000070c6ac3a00  x18 0000006cbdef8000  x19 0000000000000000
+03-17 23:12:15.172 26301 26301 F DEBUG   :     x20 0000006d40247b70  x21 0000000000000000  x22 0000000000000000  x23 b400006ecd3e6a20
+03-17 23:12:15.173 26301 26301 F DEBUG   :     x24 0000000000000000  x25 b400006fad338530  x26 0000006d40249124  x27 b400006fad338530
+03-17 23:12:15.173 26301 26301 F DEBUG   :     x28 b400006fad3383d0  x29 0000006d40247ab0
+03-17 23:12:15.173 26301 26301 F DEBUG   :     lr  0000006cb934e9a4  sp  0000006d40247ab0  pc  0000006cb934e9a4  pst 0000000060001000
+03-17 23:12:15.173 26301 26301 F DEBUG   : 19 total frames
+03-17 23:12:15.173 26301 26301 F DEBUG   : backtrace:
+03-17 23:12:15.173 26301 26301 F DEBUG   :       #00 pc 00000000002ee9a4  /data/app/~~747MBvTuHcbEz5SDo8Vyrg==/com.Vali98.ChatterUI-YNgZao6Van6ODkZ9a5rL1g==/lib/arm64/librnllama_v8_2_dotprod_i8mm.so (BuildId: 6fb2c83183745461a2fa63e386e190ecb17fdbb7)
+03-17 23:12:15.173 26301 26301 F DEBUG   :       #01 pc 000000000039b16c  /data/app/~~747MBvTuHcbEz5SDo8Vyrg==/com.Vali98.ChatterUI-YNgZao6Van6ODkZ9a5rL1g==/lib/arm64/librnllama_v8_2_dotprod_i8mm.so (BuildId: 6fb2c83183745461a2fa63e386e190ecb17fdbb7)
+03-17 23:12:15.173 26301 26301 F DEBUG   :       #02 pc 00000000004330fc  /data/app/~~747MBvTuHcbEz5SDo8Vyrg==/com.Vali98.ChatterUI-YNgZao6Van6ODkZ9a5rL1g==/lib/arm64/librnllama_v8_2_dotprod_i8mm.so (BuildId: 6fb2c83183745461a2fa63e386e190ecb17fdbb7)
+03-17 23:12:15.174 26301 26301 F DEBUG   :       #03 pc 0000000000444aa4  /data/app/~~747MBvTuHcbEz5SDo8Vyrg==/com.Vali98.ChatterUI-YNgZao6Van6ODkZ9a5rL1g==/lib/arm64/librnllama_v8_2_dotprod_i8mm.so (Java_com_rnllama_LlamaContext_initContext+3208) (BuildId: 6fb2c83183745461a2fa63e386e190ecb17fdbb7)
+03-17 23:12:15.174 26301 26301 F DEBUG   :       #04 pc 000000000060712c  /data/app/~~747MBvTuHcbEz5SDo8Vyrg==/com.Vali98.ChatterUI-YNgZao6Van6ODkZ9a5rL1g==/oat/arm64/base.odex (art_jni_trampoline+364)
+03-17 23:12:15.174 26301 26301 F DEBUG   :       #05 pc 00000000003a36a4  /data/app/~~747MBvTuHcbEz5SDo8Vyrg==/com.Vali98.ChatterUI-YNgZao6Van6ODkZ9a5rL1g==/oat/arm64/base.odex (com.rnllama.LlamaContext.<init>+3908)
+03-17 23:12:15.174 26301 26301 F DEBUG   :       #06 pc 00000000003a5490  /data/app/~~747MBvTuHcbEz5SDo8Vyrg==/com.Vali98.ChatterUI-YNgZao6Van6ODkZ9a5rL1g==/oat/arm64/base.odex (com.rnllama.RNLlama$3.doInBackground+368)
+03-17 23:12:15.174 26301 26301 F DEBUG   :       #07 pc 00000000003a4d34  /data/app/~~747MBvTuHcbEz5SDo8Vyrg==/com.Vali98.ChatterUI-YNgZao6Van6ODkZ9a5rL1g==/oat/arm64/base.odex ([DEDUPED] ?.doInBackground+68)
+03-17 23:12:15.174 26301 26301 F DEBUG   :       #08 pc 0000000000a06ee8  /data/misc/apexdata/com.android.art/dalvik-cache/arm64/boot.oat (android.os.AsyncTask$3.call+136)
+03-17 23:12:15.174 26301 26301 F DEBUG   :       #09 pc 00000000004e69a4  /data/misc/apexdata/com.android.art/dalvik-cache/arm64/boot.oat (java.util.concurrent.FutureTask.run+180)
+03-17 23:12:15.174 26301 26301 F DEBUG   :       #10 pc 00000000004f22cc  /data/misc/apexdata/com.android.art/dalvik-cache/arm64/boot.oat (java.util.concurrent.ThreadPoolExecutor.runWorker+956)
+03-17 23:12:15.174 26301 26301 F DEBUG   :       #11 pc 00000000004f67e8  /data/misc/apexdata/com.android.art/dalvik-cache/arm64/boot.oat (java.util.concurrent.ThreadPoolExecutor$Worker.run+56)
+03-17 23:12:15.175 26301 26301 F DEBUG   :       #12 pc 000000000037d5f0  /data/misc/apexdata/com.android.art/dalvik-cache/arm64/boot.oat (java.lang.Thread.run+64)
+03-17 23:12:15.175 26301 26301 F DEBUG   :       #13 pc 00000000002aaf94  /apex/com.android.art/lib64/libart.so (art_quick_invoke_stub+612) (BuildId: a1fcb66a9fb3fa9071e8a42dcf9cd5ea)
+03-17 23:12:15.175 26301 26301 F DEBUG   :       #14 pc 00000000002708ec  /apex/com.android.art/lib64/libart.so (art::ArtMethod::Invoke(art::Thread*, unsigned int*, unsigned int, art::JValue*, char const*)+220) (BuildId: a1fcb66a9fb3fa9071e8a42dcf9cd5ea)
+03-17 23:12:15.175 26301 26301 F DEBUG   :       #15 pc 00000000004bdfe0  /apex/com.android.art/lib64/libart.so (art::Thread::CreateCallback(void*)+1184) (BuildId: a1fcb66a9fb3fa9071e8a42dcf9cd5ea)
+03-17 23:12:15.175 26301 26301 F DEBUG   :       #16 pc 00000000004bdb30  /apex/com.android.art/lib64/libart.so (art::Thread::CreateCallbackWithUffdGc(void*)+8) (BuildId: a1fcb66a9fb3fa9071e8a42dcf9cd5ea)
+03-17 23:12:15.175 26301 26301 F DEBUG   :       #17 pc 0000000000070098  /apex/com.android.runtime/lib64/bionic/libc.so (__pthread_start(void*)+200) (BuildId: 41b260160dbd4aae2b04f90d937b7e4f)
+03-17 23:12:15.175 26301 26301 F DEBUG   :       #18 pc 0000000000061410  /apex/com.android.runtime/lib64/bionic/libc.so (__start_thread+64) (BuildId: 41b260160dbd4aae2b04f90d937b7e4f)
+03-17 23:12:23.845 23088 26389 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0xc0 in tid 26389 (AsyncTask #1), pid 23088 (ali98.ChatterUI)
+03-17 23:12:24.113 26416 26416 F DEBUG   : *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+03-17 23:12:24.113 26416 26416 F DEBUG   : Build fingerprint: 'Infinix/X6873-OP/Infinix-X6873:15/AP3A.240905.015.A2/145008:user/release-keys'
+03-17 23:12:24.113 26416 26416 F DEBUG   : Revision: '0'
+03-17 23:12:24.113 26416 26416 F DEBUG   : ABI: 'arm64'
+03-17 23:12:24.113 26416 26416 F DEBUG   : Timestamp: 2026-03-17 23:12:23.963420203+0700
+03-17 23:12:24.113 26416 26416 F DEBUG   : Process uptime: 510s
+03-17 23:12:24.113 26416 26416 F DEBUG   : Cmdline: com.Vali98.ChatterUI
+03-17 23:12:24.113 26416 26416 F DEBUG   : pid: 23088, tid: 26389, name: AsyncTask #1  >>> com.Vali98.ChatterUI <<<
+03-17 23:12:24.113 26416 26416 F DEBUG   : uid: 10335
+03-17 23:12:24.113 26416 26416 F DEBUG   : tagged_addr_ctrl: 0000000000000001 (PR_TAGGED_ADDR_ENABLE)
+03-17 23:12:24.113 26416 26416 F DEBUG   : pac_enabled_keys: 000000000000000f (PR_PAC_APIAKEY, PR_PAC_APIBKEY, PR_PAC_APDAKEY, PR_PAC_APDBKEY)
+03-17 23:12:24.113 26416 26416 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x00000000000000c0
+03-17 23:12:24.113 26416 26416 F DEBUG   : Cause: null pointer dereference
+03-17 23:12:24.113 26416 26416 F DEBUG   :     x0  00000000ffffffff  x1  0000006d41ad9f07  x2  0000000000000013  x3  524f49445f4a4e49
+03-17 23:12:24.113 26416 26416 F DEBUG   :     x4  524f49445f4a4e49  x5  494e4a5f44494f52  x6  494e4a5f44494f52  x7  b400006f2d2b8263
+03-17 23:12:24.113 26416 26416 F DEBUG   :     x8  6a7debadf57ff5a3  x9  6a7debadf57ff5a3  x10 0000000000000069  x11 ffffffffffffffff
+03-17 23:12:24.114 26416 26416 F DEBUG   :     x12 0000000000000049  x13 00000000fffffffc  x14 0000000000000000  x15 000000003fffffff
+03-17 23:12:24.114 26416 26416 F DEBUG   :     x16 00000070a3df1428  x17 00000070c6ac3a00  x18 0000006d459fc000  x19 0000000000000000
+03-17 23:12:24.114 26416 26416 F DEBUG   :     x20 0000006d46229b70  x21 0000000000000000  x22 0000000000000000  x23 b400006ecd3b7b30
+03-17 23:12:24.114 26416 26416 F DEBUG   :     x24 0000000000000000  x25 b400006fad2f0c50  x26 0000006d4622b124  x27 b400006fad2f0c50
+03-17 23:12:24.114 26416 26416 F DEBUG   :     x28 b400006fad303090  x29 0000006d46229ab0
+03-17 23:12:24.114 26416 26416 F DEBUG   :     lr  0000006d41d749a4  sp  0000006d46229ab0  pc  0000006d41d749a4  pst 0000000060001000
+03-17 23:12:24.114 26416 26416 F DEBUG   : 19 total frames
+03-17 23:12:24.114 26416 26416 F DEBUG   : backtrace:
+03-17 23:12:24.114 26416 26416 F DEBUG   :       #00 pc 00000000002ee9a4  /data/app/~~747MBvTuHcbEz5SDo8Vyrg==/com.Vali98.ChatterUI-YNgZao6Van6ODkZ9a5rL1g==/lib/arm64/librnllama_v8_2_dotprod_i8mm.so (BuildId: 6fb2c83183745461a2fa63e386e190ecb17fdbb7)
+03-17 23:12:24.114 26416 26416 F DEBUG   :       #01 pc 000000000039b16c  /data/app/~~747MBvTuHcbEz5SDo8Vyrg==/com.Vali98.ChatterUI-YNgZao6Van6ODkZ9a5rL1g==/lib/arm64/librnllama_v8_2_dotprod_i8mm.so (BuildId: 6fb2c83183745461a2fa63e386e190ecb17fdbb7)
+03-17 23:12:24.114 26416 26416 F DEBUG   :       #02 pc 00000000004330fc  /data/app/~~747MBvTuHcbEz5SDo8Vyrg==/com.Vali98.ChatterUI-YNgZao6Van6ODkZ9a5rL1g==/lib/arm64/librnllama_v8_2_dotprod_i8mm.so (BuildId: 6fb2c83183745461a2fa63e386e190ecb17fdbb7)
+03-17 23:12:24.114 26416 26416 F DEBUG   :       #03 pc 0000000000444aa4  /data/app/~~747MBvTuHcbEz5SDo8Vyrg==/com.Vali98.ChatterUI-YNgZao6Van6ODkZ9a5rL1g==/lib/arm64/librnllama_v8_2_dotprod_i8mm.so (Java_com_rnllama_LlamaContext_initContext+3208) (BuildId: 6fb2c83183745461a2fa63e386e190ecb17fdbb7)
+03-17 23:12:24.114 26416 26416 F DEBUG   :       #04 pc 000000000060712c  /data/app/~~747MBvTuHcbEz5SDo8Vyrg==/com.Vali98.ChatterUI-YNgZao6Van6ODkZ9a5rL1g==/oat/arm64/base.odex (art_jni_trampoline+364)
+03-17 23:12:24.114 26416 26416 F DEBUG   :       #05 pc 00000000003a36a4  /data/app/~~747MBvTuHcbEz5SDo8Vyrg==/com.Vali98.ChatterUI-YNgZao6Van6ODkZ9a5rL1g==/oat/arm64/base.odex (com.rnllama.LlamaContext.<init>+3908)
+03-17 23:12:24.114 26416 26416 F DEBUG   :       #06 pc 00000000003a5490  /data/app/~~747MBvTuHcbEz5SDo8Vyrg==/com.Vali98.ChatterUI-YNgZao6Van6ODkZ9a5rL1g==/oat/arm64/base.odex (com.rnllama.RNLlama$3.doInBackground+368)
+03-17 23:12:24.114 26416 26416 F DEBUG   :       #07 pc 00000000003a4d34  /data/app/~~747MBvTuHcbEz5SDo8Vyrg==/com.Vali98.ChatterUI-YNgZao6Van6ODkZ9a5rL1g==/oat/arm64/base.odex ([DEDUPED] ?.doInBackground+68)
+03-17 23:12:24.114 26416 26416 F DEBUG   :       #08 pc 0000000000a06ee8  /data/misc/apexdata/com.android.art/dalvik-cache/arm64/boot.oat (android.os.AsyncTask$3.call+136)
+03-17 23:12:24.114 26416 26416 F DEBUG   :       #09 pc 00000000004e69a4  /data/misc/apexdata/com.android.art/dalvik-cache/arm64/boot.oat (java.util.concurrent.FutureTask.run+180)
+03-17 23:12:24.114 26416 26416 F DEBUG   :       #10 pc 00000000004f22cc  /data/misc/apexdata/com.android.art/dalvik-cache/arm64/boot.oat (java.util.concurrent.ThreadPoolExecutor.runWorker+956)
+03-17 23:12:24.114 26416 26416 F DEBUG   :       #11 pc 00000000004f67e8  /data/misc/apexdata/com.android.art/dalvik-cache/arm64/boot.oat (java.util.concurrent.ThreadPoolExecutor$Worker.run+56)
+03-17 23:12:24.114 26416 26416 F DEBUG   :       #12 pc 000000000037d5f0  /data/misc/apexdata/com.android.art/dalvik-cache/arm64/boot.oat (java.lang.Thread.run+64)
+03-17 23:12:24.114 26416 26416 F DEBUG   :       #13 pc 00000000002aaf94  /apex/com.android.art/lib64/libart.so (art_quick_invoke_stub+612) (BuildId: a1fcb66a9fb3fa9071e8a42dcf9cd5ea)
+03-17 23:12:24.114 26416 26416 F DEBUG   :       #14 pc 00000000002708ec  /apex/com.android.art/lib64/libart.so (art::ArtMethod::Invoke(art::Thread*, unsigned int*, unsigned int, art::JValue*, char const*)+220) (BuildId: a1fcb66a9fb3fa9071e8a42dcf9cd5ea)
+03-17 23:12:24.114 26416 26416 F DEBUG   :       #15 pc 00000000004bdfe0  /apex/com.android.art/lib64/libart.so (art::Thread::CreateCallback(void*)+1184) (BuildId: a1fcb66a9fb3fa9071e8a42dcf9cd5ea)
+03-17 23:12:24.114 26416 26416 F DEBUG   :       #16 pc 00000000004bdb30  /apex/com.android.art/lib64/libart.so (art::Thread::CreateCallbackWithUffdGc(void*)+8) (BuildId: a1fcb66a9fb3fa9071e8a42dcf9cd5ea)
+03-17 23:12:24.114 26416 26416 F DEBUG   :       #17 pc 0000000000070098  /apex/com.android.runtime/lib64/bionic/libc.so (__pthread_start(void*)+200) (BuildId: 41b260160dbd4aae2b04f90d937b7e4f)
+03-17 23:12:24.114 26416 26416 F DEBUG   :       #18 pc 0000000000061410  /apex/com.android.runtime/lib64/bionic/libc.so (__start_thread+64) (BuildId: 41b260160dbd4aae2b04f90d937b7e4f)
+03-17 23:13:41.933 26458 28004 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0xc0 in tid 28004 (AsyncTask #1), pid 26458 (ali98.ChatterUI)
+03-17 23:13:42.620 28090 28090 F DEBUG   : *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+03-17 23:13:42.620 28090 28090 F DEBUG   : Build fingerprint: 'Infinix/X6873-OP/Infinix-X6873:15/AP3A.240905.015.A2/145008:user/release-keys'
+03-17 23:13:42.620 28090 28090 F DEBUG   : Revision: '0'
+03-17 23:13:42.620 28090 28090 F DEBUG   : ABI: 'arm64'
+03-17 23:13:42.620 28090 28090 F DEBUG   : Timestamp: 2026-03-17 23:13:42.067751669+0700
+03-17 23:13:42.620 28090 28090 F DEBUG   : Process uptime: 76s
+03-17 23:13:42.620 28090 28090 F DEBUG   : Cmdline: com.Vali98.ChatterUI
+03-17 23:13:42.620 28090 28090 F DEBUG   : pid: 26458, tid: 28004, name: AsyncTask #1  >>> com.Vali98.ChatterUI <<<
+03-17 23:13:42.620 28090 28090 F DEBUG   : uid: 10335
+03-17 23:13:42.620 28090 28090 F DEBUG   : tagged_addr_ctrl: 0000000000000001 (PR_TAGGED_ADDR_ENABLE)
+03-17 23:13:42.620 28090 28090 F DEBUG   : pac_enabled_keys: 000000000000000f (PR_PAC_APIAKEY, PR_PAC_APIBKEY, PR_PAC_APDAKEY, PR_PAC_APDBKEY)
+03-17 23:13:42.620 28090 28090 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x00000000000000c0
+03-17 23:13:42.620 28090 28090 F DEBUG   : Cause: null pointer dereference
+03-17 23:13:42.620 28090 28090 F DEBUG   :     x0  00000000ffffffff  x1  0000006d40674f07  x2  0000000000000013  x3  524f49445f4a4e49
+03-17 23:13:42.620 28090 28090 F DEBUG   :     x4  524f49445f4a4e49  x5  494e4a5f44494f52  x6  494e4a5f44494f52  x7  b400006f8d385b23
+03-17 23:13:42.620 28090 28090 F DEBUG   :     x8  3bd8b06636946d05  x9  3bd8b06636946d05  x10 0000000000000069  x11 ffffffffffffffff
+03-17 23:13:42.620 28090 28090 F DEBUG   :     x12 0000000000000049  x13 00000000fffffffc  x14 0000000000000000  x15 000000003fffffff
+03-17 23:13:42.620 28090 28090 F DEBUG   :     x16 00000070a3df1428  x17 00000070c6ac3a00  x18 0000006d44a4c000  x19 0000000000000000
+03-17 23:13:42.620 28090 28090 F DEBUG   :     x20 0000006d4ea62b70  x21 0000000000000000  x22 0000000000000000  x23 b400006ecd3b9700
+03-17 23:13:42.621 28090 28090 F DEBUG   :     x24 0000000000000000  x25 b400006fad30b810  x26 0000006d4ea64124  x27 b400006fad30b810
+03-17 23:13:42.621 28090 28090 F DEBUG   :     x28 b400006fad30b7d0  x29 0000006d4ea62ab0
+03-17 23:13:42.621 28090 28090 F DEBUG   :     lr  0000006d4090f9a4  sp  0000006d4ea62ab0  pc  0000006d4090f9a4  pst 0000000060001000
+03-17 23:13:42.621 28090 28090 F DEBUG   : 19 total frames
+03-17 23:13:42.621 28090 28090 F DEBUG   : backtrace:
+03-17 23:13:42.621 28090 28090 F DEBUG   :       #00 pc 00000000002ee9a4  /data/app/~~747MBvTuHcbEz5SDo8Vyrg==/com.Vali98.ChatterUI-YNgZao6Van6ODkZ9a5rL1g==/lib/arm64/librnllama_v8_2_dotprod_i8mm.so (BuildId: 6fb2c83183745461a2fa63e386e190ecb17fdbb7)
+03-17 23:13:42.621 28090 28090 F DEBUG   :       #01 pc 000000000039b16c  /data/app/~~747MBvTuHcbEz5SDo8Vyrg==/com.Vali98.ChatterUI-YNgZao6Van6ODkZ9a5rL1g==/lib/arm64/librnllama_v8_2_dotprod_i8mm.so (BuildId: 6fb2c83183745461a2fa63e386e190ecb17fdbb7)
+03-17 23:13:42.621 28090 28090 F DEBUG   :       #02 pc 00000000004330fc  /data/app/~~747MBvTuHcbEz5SDo8Vyrg==/com.Vali98.ChatterUI-YNgZao6Van6ODkZ9a5rL1g==/lib/arm64/librnllama_v8_2_dotprod_i8mm.so (BuildId: 6fb2c83183745461a2fa63e386e190ecb17fdbb7)
+03-17 23:13:42.621 28090 28090 F DEBUG   :       #03 pc 0000000000444aa4  /data/app/~~747MBvTuHcbEz5SDo8Vyrg==/com.Vali98.ChatterUI-YNgZao6Van6ODkZ9a5rL1g==/lib/arm64/librnllama_v8_2_dotprod_i8mm.so (Java_com_rnllama_LlamaContext_initContext+3208) (BuildId: 6fb2c83183745461a2fa63e386e190ecb17fdbb7)
+03-17 23:13:42.621 28090 28090 F DEBUG   :       #04 pc 000000000060712c  /data/app/~~747MBvTuHcbEz5SDo8Vyrg==/com.Vali98.ChatterUI-YNgZao6Van6ODkZ9a5rL1g==/oat/arm64/base.odex (art_jni_trampoline+364)
+03-17 23:13:42.621 28090 28090 F DEBUG   :       #05 pc 00000000003a36a4  /data/app/~~747MBvTuHcbEz5SDo8Vyrg==/com.Vali98.ChatterUI-YNgZao6Van6ODkZ9a5rL1g==/oat/arm64/base.odex (com.rnllama.LlamaContext.<init>+3908)
+03-17 23:13:42.621 28090 28090 F DEBUG   :       #06 pc 00000000003a5490  /data/app/~~747MBvTuHcbEz5SDo8Vyrg==/com.Vali98.ChatterUI-YNgZao6Van6ODkZ9a5rL1g==/oat/arm64/base.odex (com.rnllama.RNLlama$3.doInBackground+368)
+03-17 23:13:42.621 28090 28090 F DEBUG   :       #07 pc 00000000003a4d34  /data/app/~~747MBvTuHcbEz5SDo8Vyrg==/com.Vali98.ChatterUI-YNgZao6Van6ODkZ9a5rL1g==/oat/arm64/base.odex ([DEDUPED] ?.doInBackground+68)
+03-17 23:13:42.621 28090 28090 F DEBUG   :       #08 pc 0000000000a06ee8  /data/misc/apexdata/com.android.art/dalvik-cache/arm64/boot.oat (android.os.AsyncTask$3.call+136)
+03-17 23:13:42.621 28090 28090 F DEBUG   :       #09 pc 00000000004e69a4  /data/misc/apexdata/com.android.art/dalvik-cache/arm64/boot.oat (java.util.concurrent.FutureTask.run+180)
+03-17 23:13:42.621 28090 28090 F DEBUG   :       #10 pc 00000000004f22cc  /data/misc/apexdata/com.android.art/dalvik-cache/arm64/boot.oat (java.util.concurrent.ThreadPoolExecutor.runWorker+956)
+03-17 23:13:42.621 28090 28090 F DEBUG   :       #11 pc 00000000004f67e8  /data/misc/apexdata/com.android.art/dalvik-cache/arm64/boot.oat (java.util.concurrent.ThreadPoolExecutor$Worker.run+56)
+03-17 23:13:42.621 28090 28090 F DEBUG   :       #12 pc 000000000037d5f0  /data/misc/apexdata/com.android.art/dalvik-cache/arm64/boot.oat (java.lang.Thread.run+64)
+03-17 23:13:42.621 28090 28090 F DEBUG   :       #13 pc 00000000002aaf94  /apex/com.android.art/lib64/libart.so (art_quick_invoke_stub+612) (BuildId: a1fcb66a9fb3fa9071e8a42dcf9cd5ea)
+03-17 23:13:42.621 28090 28090 F DEBUG   :       #14 pc 00000000002708ec  /apex/com.android.art/lib64/libart.so (art::ArtMethod::Invoke(art::Thread*, unsigned int*, unsigned int, art::JValue*, char const*)+220) (BuildId: a1fcb66a9fb3fa9071e8a42dcf9cd5ea)
+03-17 23:13:42.621 28090 28090 F DEBUG   :       #15 pc 00000000004bdfe0  /apex/com.android.art/lib64/libart.so (art::Thread::CreateCallback(void*)+1184) (BuildId: a1fcb66a9fb3fa9071e8a42dcf9cd5ea)
+03-17 23:13:42.621 28090 28090 F DEBUG   :       #16 pc 00000000004bdb30  /apex/com.android.art/lib64/libart.so (art::Thread::CreateCallbackWithUffdGc(void*)+8) (BuildId: a1fcb66a9fb3fa9071e8a42dcf9cd5ea)
+03-17 23:13:42.621 28090 28090 F DEBUG   :       #17 pc 0000000000070098  /apex/com.android.runtime/lib64/bionic/libc.so (__pthread_start(void*)+200) (BuildId: 41b260160dbd4aae2b04f90d937b7e4f)
+03-17 23:13:42.621 28090 28090 F DEBUG   :       #18 pc 0000000000061410  /apex/com.android.runtime/lib64/bionic/libc.so (__start_thread+64) (BuildId: 41b260160dbd4aae2b04f90d937b7e4f)
+03-17 23:15:22.787 29306 29495 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0xc0 in tid 29495 (AsyncTask #1), pid 29306 (ali98.ChatterUI)
+03-17 23:15:23.223 29579 29579 F DEBUG   : *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+03-17 23:15:23.223 29579 29579 F DEBUG   : Build fingerprint: 'Infinix/X6873-OP/Infinix-X6873:15/AP3A.240905.015.A2/145008:user/release-keys'
+03-17 23:15:23.223 29579 29579 F DEBUG   : Revision: '0'
+03-17 23:15:23.223 29579 29579 F DEBUG   : ABI: 'arm64'
+03-17 23:15:23.223 29579 29579 F DEBUG   : Timestamp: 2026-03-17 23:15:22.880694368+0700
+03-17 23:15:23.223 29579 29579 F DEBUG   : Process uptime: 22s
+03-17 23:15:23.223 29579 29579 F DEBUG   : Cmdline: com.Vali98.ChatterUI
+03-17 23:15:23.223 29579 29579 F DEBUG   : pid: 29306, tid: 29495, name: AsyncTask #1  >>> com.Vali98.ChatterUI <<<
+03-17 23:15:23.223 29579 29579 F DEBUG   : uid: 10335
+03-17 23:15:23.223 29579 29579 F DEBUG   : tagged_addr_ctrl: 0000000000000001 (PR_TAGGED_ADDR_ENABLE)
+03-17 23:15:23.223 29579 29579 F DEBUG   : pac_enabled_keys: 000000000000000f (PR_PAC_APIAKEY, PR_PAC_APIBKEY, PR_PAC_APDAKEY, PR_PAC_APDBKEY)
+03-17 23:15:23.223 29579 29579 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x00000000000000c0
+03-17 23:15:23.223 29579 29579 F DEBUG   : Cause: null pointer dereference
+03-17 23:15:23.223 29579 29579 F DEBUG   :     x0  00000000ffffffff  x1  0000006d420cdf07  x2  0000000000000013  x3  524f49445f4a4e49
+03-17 23:15:23.223 29579 29579 F DEBUG   :     x4  524f49445f4a4e49  x5  494e4a5f44494f52  x6  494e4a5f44494f52  x7  b400006f8d30db63
+03-17 23:15:23.223 29579 29579 F DEBUG   :     x8  8422e92e4cbe1119  x9  8422e92e4cbe1119  x10 0000000000000069  x11 ffffffffffffffff
+03-17 23:15:23.223 29579 29579 F DEBUG   :     x12 0000000000000049  x13 00000000fffffffc  x14 0000000000000000  x15 000000003fffffff
+03-17 23:15:23.223 29579 29579 F DEBUG   :     x16 00000070a3df1428  x17 00000070c6ac3a00  x18 0000006d46354000  x19 0000000000000000
+03-17 23:15:23.223 29579 29579 F DEBUG   :     x20 0000006d4e654b70  x21 0000000000000000  x22 0000000000000000  x23 b400006ecd409660
+03-17 23:15:23.223 29579 29579 F DEBUG   :     x24 0000000000000000  x25 b400006fad33cfd0  x26 0000006d4e656124  x27 b400006fad33cfd0
+03-17 23:15:23.223 29579 29579 F DEBUG   :     x28 b400006fad33ce70  x29 0000006d4e654ab0
+03-17 23:15:23.223 29579 29579 F DEBUG   :     lr  0000006d423689a4  sp  0000006d4e654ab0  pc  0000006d423689a4  pst 0000000060001000
+03-17 23:15:23.223 29579 29579 F DEBUG   : 19 total frames
+03-17 23:15:23.223 29579 29579 F DEBUG   : backtrace:
+03-17 23:15:23.223 29579 29579 F DEBUG   :       #00 pc 00000000002ee9a4  /data/app/~~747MBvTuHcbEz5SDo8Vyrg==/com.Vali98.ChatterUI-YNgZao6Van6ODkZ9a5rL1g==/lib/arm64/librnllama_v8_2_dotprod_i8mm.so (BuildId: 6fb2c83183745461a2fa63e386e190ecb17fdbb7)
+03-17 23:15:23.223 29579 29579 F DEBUG   :       #01 pc 000000000039b16c  /data/app/~~747MBvTuHcbEz5SDo8Vyrg==/com.Vali98.ChatterUI-YNgZao6Van6ODkZ9a5rL1g==/lib/arm64/librnllama_v8_2_dotprod_i8mm.so (BuildId: 6fb2c83183745461a2fa63e386e190ecb17fdbb7)
+03-17 23:15:23.224 29579 29579 F DEBUG   :       #02 pc 00000000004330fc  /data/app/~~747MBvTuHcbEz5SDo8Vyrg==/com.Vali98.ChatterUI-YNgZao6Van6ODkZ9a5rL1g==/lib/arm64/librnllama_v8_2_dotprod_i8mm.so (BuildId: 6fb2c83183745461a2fa63e386e190ecb17fdbb7)
+03-17 23:15:23.224 29579 29579 F DEBUG   :       #03 pc 0000000000444aa4  /data/app/~~747MBvTuHcbEz5SDo8Vyrg==/com.Vali98.ChatterUI-YNgZao6Van6ODkZ9a5rL1g==/lib/arm64/librnllama_v8_2_dotprod_i8mm.so (Java_com_rnllama_LlamaContext_initContext+3208) (BuildId: 6fb2c83183745461a2fa63e386e190ecb17fdbb7)
+03-17 23:15:23.224 29579 29579 F DEBUG   :       #04 pc 000000000060712c  /data/app/~~747MBvTuHcbEz5SDo8Vyrg==/com.Vali98.ChatterUI-YNgZao6Van6ODkZ9a5rL1g==/oat/arm64/base.odex (art_jni_trampoline+364)
+03-17 23:15:23.224 29579 29579 F DEBUG   :       #05 pc 00000000003a36a4  /data/app/~~747MBvTuHcbEz5SDo8Vyrg==/com.Vali98.ChatterUI-YNgZao6Van6ODkZ9a5rL1g==/oat/arm64/base.odex (com.rnllama.LlamaContext.<init>+3908)
+03-17 23:15:23.224 29579 29579 F DEBUG   :       #06 pc 00000000003a5490  /data/app/~~747MBvTuHcbEz5SDo8Vyrg==/com.Vali98.ChatterUI-YNgZao6Van6ODkZ9a5rL1g==/oat/arm64/base.odex (com.rnllama.RNLlama$3.doInBackground+368)
+03-17 23:15:23.224 29579 29579 F DEBUG   :       #07 pc 00000000003a4d34  /data/app/~~747MBvTuHcbEz5SDo8Vyrg==/com.Vali98.ChatterUI-YNgZao6Van6ODkZ9a5rL1g==/oat/arm64/base.odex ([DEDUPED] ?.doInBackground+68)
+03-17 23:15:23.224 29579 29579 F DEBUG   :       #08 pc 0000000000a06ee8  /data/misc/apexdata/com.android.art/dalvik-cache/arm64/boot.oat (android.os.AsyncTask$3.call+136)
+03-17 23:15:23.224 29579 29579 F DEBUG   :       #09 pc 00000000004e69a4  /data/misc/apexdata/com.android.art/dalvik-cache/arm64/boot.oat (java.util.concurrent.FutureTask.run+180)
+03-17 23:15:23.224 29579 29579 F DEBUG   :       #10 pc 00000000004f22cc  /data/misc/apexdata/com.android.art/dalvik-cache/arm64/boot.oat (java.util.concurrent.ThreadPoolExecutor.runWorker+956)
+03-17 23:15:23.224 29579 29579 F DEBUG   :       #11 pc 00000000004f67e8  /data/misc/apexdata/com.android.art/dalvik-cache/arm64/boot.oat (java.util.concurrent.ThreadPoolExecutor$Worker.run+56)
+03-17 23:15:23.224 29579 29579 F DEBUG   :       #12 pc 000000000037d5f0  /data/misc/apexdata/com.android.art/dalvik-cache/arm64/boot.oat (java.lang.Thread.run+64)
+03-17 23:15:23.224 29579 29579 F DEBUG   :       #13 pc 00000000002aaf94  /apex/com.android.art/lib64/libart.so (art_quick_invoke_stub+612) (BuildId: a1fcb66a9fb3fa9071e8a42dcf9cd5ea)
+03-17 23:15:23.224 29579 29579 F DEBUG   :       #14 pc 00000000002708ec  /apex/com.android.art/lib64/libart.so (art::ArtMethod::Invoke(art::Thread*, unsigned int*, unsigned int, art::JValue*, char const*)+220) (BuildId: a1fcb66a9fb3fa9071e8a42dcf9cd5ea)
+03-17 23:15:23.224 29579 29579 F DEBUG   :       #15 pc 00000000004bdfe0  /apex/com.android.art/lib64/libart.so (art::Thread::CreateCallback(void*)+1184) (BuildId: a1fcb66a9fb3fa9071e8a42dcf9cd5ea)
+03-17 23:15:23.224 29579 29579 F DEBUG   :       #16 pc 00000000004bdb30  /apex/com.android.art/lib64/libart.so (art::Thread::CreateCallbackWithUffdGc(void*)+8) (BuildId: a1fcb66a9fb3fa9071e8a42dcf9cd5ea)
+03-17 23:15:23.224 29579 29579 F DEBUG   :       #17 pc 0000000000070098  /apex/com.android.runtime/lib64/bionic/libc.so (__pthread_start(void*)+200) (BuildId: 41b260160dbd4aae2b04f90d937b7e4f)
+03-17 23:15:23.224 29579 29579 F DEBUG   :       #18 pc 0000000000061410  /apex/com.android.runtime/lib64/bionic/libc.so (__start_thread+64) (BuildId: 41b260160dbd4aae2b04f90d937b7e4f)
+03-23 15:29:49.873 29331 29331 E AndroidRuntime: FATAL EXCEPTION: main
+03-23 15:29:49.873 29331 29331 E AndroidRuntime: Process: com.example.dispatchapp, PID: 29331
+03-23 15:29:49.873 29331 29331 E AndroidRuntime: android.content.ActivityNotFoundException: Unable to find explicit activity class {com.example.dispatchapp/com.example.dispatchapp.OtpVerification}; have you declared this activity in your AndroidManifest.xml, or does your intent not match its declared <intent-filter>?
+03-23 15:29:49.873 29331 29331 E AndroidRuntime: 	at android.app.Instrumentation.checkStartActivityResult(Instrumentation.java:2440)
+03-23 15:29:49.873 29331 29331 E AndroidRuntime: 	at android.app.Instrumentation.execStartActivity(Instrumentation.java:2012)
+03-23 15:29:49.873 29331 29331 E AndroidRuntime: 	at android.app.Activity.startActivityForResult(Activity.java:5887)
+03-23 15:29:49.873 29331 29331 E AndroidRuntime: 	at androidx.activity.ComponentActivity.startActivityForResult(ComponentActivity.java:780)
+03-23 15:29:49.873 29331 29331 E AndroidRuntime: 	at android.app.Activity.startActivityForResult(Activity.java:5842)
+03-23 15:29:49.873 29331 29331 E AndroidRuntime: 	at androidx.activity.ComponentActivity.startActivityForResult(ComponentActivity.java:761)
+03-23 15:29:49.873 29331 29331 E AndroidRuntime: 	at android.app.Activity.startActivity(Activity.java:6342)
+03-23 15:29:49.873 29331 29331 E AndroidRuntime: 	at android.app.Activity.startActivity(Activity.java:6309)
+03-23 15:29:49.873 29331 29331 E AndroidRuntime: 	at com.example.dispatchapp.Register.onCreate$regist(Register.kt:36)
+03-23 15:29:49.873 29331 29331 E AndroidRuntime: 	at com.example.dispatchapp.Register.onCreate$lambda$0(Register.kt:43)
+03-23 15:29:49.873 29331 29331 E AndroidRuntime: 	at com.example.dispatchapp.Register.$r8$lambda$vl1ICQRkceJfRGA2qe_Y8vhyA9k(Unknown Source:0)
+03-23 15:29:49.873 29331 29331 E AndroidRuntime: 	at com.example.dispatchapp.Register$$ExternalSyntheticLambda0.onClick(D8$$SyntheticClass:0)
+03-23 15:29:49.873 29331 29331 E AndroidRuntime: 	at android.view.View.performClick(View.java:8036)
+03-23 15:29:49.873 29331 29331 E AndroidRuntime: 	at com.google.android.material.button.MaterialButton.performClick(MaterialButton.java:1218)
+03-23 15:29:49.873 29331 29331 E AndroidRuntime: 	at android.view.View.performClickInternal(View.java:8009)
+03-23 15:29:49.873 29331 29331 E AndroidRuntime: 	at android.view.View.-$$Nest$mperformClickInternal(Unknown Source:0)
+03-23 15:29:49.873 29331 29331 E AndroidRuntime: 	at android.view.View$PerformClick.run(View.java:31483)
+03-23 15:29:49.873 29331 29331 E AndroidRuntime: 	at android.os.Handler.handleCallback(Handler.java:959)
+03-23 15:29:49.873 29331 29331 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:100)
+03-23 15:29:49.873 29331 29331 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:311)
+03-23 15:29:49.873 29331 29331 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:408)
+03-23 15:29:49.873 29331 29331 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:9119)
+03-23 15:29:49.873 29331 29331 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-23 15:29:49.873 29331 29331 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:627)
+03-23 15:29:49.873 29331 29331 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:970)
+03-23 15:29:56.688 31387 31387 E AndroidRuntime: FATAL EXCEPTION: main
+03-23 15:29:56.688 31387 31387 E AndroidRuntime: Process: com.example.dispatchapp, PID: 31387
+03-23 15:29:56.688 31387 31387 E AndroidRuntime: android.content.ActivityNotFoundException: Unable to find explicit activity class {com.example.dispatchapp/com.example.dispatchapp.OtpVerification}; have you declared this activity in your AndroidManifest.xml, or does your intent not match its declared <intent-filter>?
+03-23 15:29:56.688 31387 31387 E AndroidRuntime: 	at android.app.Instrumentation.checkStartActivityResult(Instrumentation.java:2440)
+03-23 15:29:56.688 31387 31387 E AndroidRuntime: 	at android.app.Instrumentation.execStartActivity(Instrumentation.java:2012)
+03-23 15:29:56.688 31387 31387 E AndroidRuntime: 	at android.app.Activity.startActivityForResult(Activity.java:5887)
+03-23 15:29:56.688 31387 31387 E AndroidRuntime: 	at androidx.activity.ComponentActivity.startActivityForResult(ComponentActivity.java:780)
+03-23 15:29:56.688 31387 31387 E AndroidRuntime: 	at android.app.Activity.startActivityForResult(Activity.java:5842)
+03-23 15:29:56.688 31387 31387 E AndroidRuntime: 	at androidx.activity.ComponentActivity.startActivityForResult(ComponentActivity.java:761)
+03-23 15:29:56.688 31387 31387 E AndroidRuntime: 	at android.app.Activity.startActivity(Activity.java:6342)
+03-23 15:29:56.688 31387 31387 E AndroidRuntime: 	at android.app.Activity.startActivity(Activity.java:6309)
+03-23 15:29:56.688 31387 31387 E AndroidRuntime: 	at com.example.dispatchapp.Register.onCreate$regist(Register.kt:36)
+03-23 15:29:56.688 31387 31387 E AndroidRuntime: 	at com.example.dispatchapp.Register.onCreate$lambda$0(Register.kt:43)
+03-23 15:29:56.688 31387 31387 E AndroidRuntime: 	at com.example.dispatchapp.Register.$r8$lambda$vl1ICQRkceJfRGA2qe_Y8vhyA9k(Unknown Source:0)
+03-23 15:29:56.688 31387 31387 E AndroidRuntime: 	at com.example.dispatchapp.Register$$ExternalSyntheticLambda0.onClick(D8$$SyntheticClass:0)
+03-23 15:29:56.688 31387 31387 E AndroidRuntime: 	at android.view.View.performClick(View.java:8036)
+03-23 15:29:56.688 31387 31387 E AndroidRuntime: 	at com.google.android.material.button.MaterialButton.performClick(MaterialButton.java:1218)
+03-23 15:29:56.688 31387 31387 E AndroidRuntime: 	at android.view.View.performClickInternal(View.java:8009)
+03-23 15:29:56.688 31387 31387 E AndroidRuntime: 	at android.view.View.-$$Nest$mperformClickInternal(Unknown Source:0)
+03-23 15:29:56.688 31387 31387 E AndroidRuntime: 	at android.view.View$PerformClick.run(View.java:31483)
+03-23 15:29:56.688 31387 31387 E AndroidRuntime: 	at android.os.Handler.handleCallback(Handler.java:959)
+03-23 15:29:56.688 31387 31387 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:100)
+03-23 15:29:56.688 31387 31387 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:311)
+03-23 15:29:56.688 31387 31387 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:408)
+03-23 15:29:56.688 31387 31387 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:9119)
+03-23 15:29:56.688 31387 31387 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-23 15:29:56.688 31387 31387 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:627)
+03-23 15:29:56.688 31387 31387 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:970)
+03-23 15:30:25.431 31847 31847 E AndroidRuntime: FATAL EXCEPTION: main
+03-23 15:30:25.431 31847 31847 E AndroidRuntime: Process: com.example.dispatchapp, PID: 31847
+03-23 15:30:25.431 31847 31847 E AndroidRuntime: android.content.ActivityNotFoundException: Unable to find explicit activity class {com.example.dispatchapp/com.example.dispatchapp.OtpVerification}; have you declared this activity in your AndroidManifest.xml, or does your intent not match its declared <intent-filter>?
+03-23 15:30:25.431 31847 31847 E AndroidRuntime: 	at android.app.Instrumentation.checkStartActivityResult(Instrumentation.java:2440)
+03-23 15:30:25.431 31847 31847 E AndroidRuntime: 	at android.app.Instrumentation.execStartActivity(Instrumentation.java:2012)
+03-23 15:30:25.431 31847 31847 E AndroidRuntime: 	at android.app.Activity.startActivityForResult(Activity.java:5887)
+03-23 15:30:25.431 31847 31847 E AndroidRuntime: 	at androidx.activity.ComponentActivity.startActivityForResult(ComponentActivity.java:780)
+03-23 15:30:25.431 31847 31847 E AndroidRuntime: 	at android.app.Activity.startActivityForResult(Activity.java:5842)
+03-23 15:30:25.431 31847 31847 E AndroidRuntime: 	at androidx.activity.ComponentActivity.startActivityForResult(ComponentActivity.java:761)
+03-23 15:30:25.431 31847 31847 E AndroidRuntime: 	at android.app.Activity.startActivity(Activity.java:6342)
+03-23 15:30:25.431 31847 31847 E AndroidRuntime: 	at android.app.Activity.startActivity(Activity.java:6309)
+03-23 15:30:25.431 31847 31847 E AndroidRuntime: 	at com.example.dispatchapp.Register.onCreate$regist(Register.kt:36)
+03-23 15:30:25.431 31847 31847 E AndroidRuntime: 	at com.example.dispatchapp.Register.onCreate$lambda$0(Register.kt:43)
+03-23 15:30:25.431 31847 31847 E AndroidRuntime: 	at com.example.dispatchapp.Register.$r8$lambda$vl1ICQRkceJfRGA2qe_Y8vhyA9k(Unknown Source:0)
+03-23 15:30:25.431 31847 31847 E AndroidRuntime: 	at com.example.dispatchapp.Register$$ExternalSyntheticLambda0.onClick(D8$$SyntheticClass:0)
+03-23 15:30:25.431 31847 31847 E AndroidRuntime: 	at android.view.View.performClick(View.java:8036)
+03-23 15:30:25.431 31847 31847 E AndroidRuntime: 	at com.google.android.material.button.MaterialButton.performClick(MaterialButton.java:1218)
+03-23 15:30:25.431 31847 31847 E AndroidRuntime: 	at android.view.View.performClickInternal(View.java:8009)
+03-23 15:30:25.431 31847 31847 E AndroidRuntime: 	at android.view.View.-$$Nest$mperformClickInternal(Unknown Source:0)
+03-23 15:30:25.431 31847 31847 E AndroidRuntime: 	at android.view.View$PerformClick.run(View.java:31483)
+03-23 15:30:25.431 31847 31847 E AndroidRuntime: 	at android.os.Handler.handleCallback(Handler.java:959)
+03-23 15:30:25.431 31847 31847 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:100)
+03-23 15:30:25.431 31847 31847 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:311)
+03-23 15:30:25.431 31847 31847 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:408)
+03-23 15:30:25.431 31847 31847 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:9119)
+03-23 15:30:25.431 31847 31847 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-23 15:30:25.431 31847 31847 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:627)
+03-23 15:30:25.431 31847 31847 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:970)
+03-23 15:32:13.992 32186 32186 E AndroidRuntime: FATAL EXCEPTION: main
+03-23 15:32:13.992 32186 32186 E AndroidRuntime: Process: com.example.dispatchapp, PID: 32186
+03-23 15:32:13.992 32186 32186 E AndroidRuntime: android.content.ActivityNotFoundException: Unable to find explicit activity class {com.example.dispatchapp/com.example.dispatchapp.OtpVerification}; have you declared this activity in your AndroidManifest.xml, or does your intent not match its declared <intent-filter>?
+03-23 15:32:13.992 32186 32186 E AndroidRuntime: 	at android.app.Instrumentation.checkStartActivityResult(Instrumentation.java:2440)
+03-23 15:32:13.992 32186 32186 E AndroidRuntime: 	at android.app.Instrumentation.execStartActivity(Instrumentation.java:2012)
+03-23 15:32:13.992 32186 32186 E AndroidRuntime: 	at android.app.Activity.startActivityForResult(Activity.java:5887)
+03-23 15:32:13.992 32186 32186 E AndroidRuntime: 	at androidx.activity.ComponentActivity.startActivityForResult(ComponentActivity.java:780)
+03-23 15:32:13.992 32186 32186 E AndroidRuntime: 	at android.app.Activity.startActivityForResult(Activity.java:5842)
+03-23 15:32:13.992 32186 32186 E AndroidRuntime: 	at androidx.activity.ComponentActivity.startActivityForResult(ComponentActivity.java:761)
+03-23 15:32:13.992 32186 32186 E AndroidRuntime: 	at android.app.Activity.startActivity(Activity.java:6342)
+03-23 15:32:13.992 32186 32186 E AndroidRuntime: 	at android.app.Activity.startActivity(Activity.java:6309)
+03-23 15:32:13.992 32186 32186 E AndroidRuntime: 	at com.example.dispatchapp.Register.onCreate$regist(Register.kt:36)
+03-23 15:32:13.992 32186 32186 E AndroidRuntime: 	at com.example.dispatchapp.Register.onCreate$lambda$0(Register.kt:43)
+03-23 15:32:13.992 32186 32186 E AndroidRuntime: 	at com.example.dispatchapp.Register.$r8$lambda$vl1ICQRkceJfRGA2qe_Y8vhyA9k(Unknown Source:0)
+03-23 15:32:13.992 32186 32186 E AndroidRuntime: 	at com.example.dispatchapp.Register$$ExternalSyntheticLambda0.onClick(D8$$SyntheticClass:0)
+03-23 15:32:13.992 32186 32186 E AndroidRuntime: 	at android.view.View.performClick(View.java:8036)
+03-23 15:32:13.992 32186 32186 E AndroidRuntime: 	at com.google.android.material.button.MaterialButton.performClick(MaterialButton.java:1218)
+03-23 15:32:13.992 32186 32186 E AndroidRuntime: 	at android.view.View.performClickInternal(View.java:8009)
+03-23 15:32:13.992 32186 32186 E AndroidRuntime: 	at android.view.View.-$$Nest$mperformClickInternal(Unknown Source:0)
+03-23 15:32:13.992 32186 32186 E AndroidRuntime: 	at android.view.View$PerformClick.run(View.java:31483)
+03-23 15:32:13.992 32186 32186 E AndroidRuntime: 	at android.os.Handler.handleCallback(Handler.java:959)
+03-23 15:32:13.992 32186 32186 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:100)
+03-23 15:32:13.992 32186 32186 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:311)
+03-23 15:32:13.992 32186 32186 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:408)
+03-23 15:32:13.992 32186 32186 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:9119)
+03-23 15:32:13.992 32186 32186 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-23 15:32:13.992 32186 32186 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:627)
+03-23 15:32:13.992 32186 32186 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:970)
+03-24 00:02:39.802  9501 15415 E AndroidRuntime: FATAL EXCEPTION: DefaultDispatcher-worker-1
+03-24 00:02:39.802  9501 15415 E AndroidRuntime: Process: com.example.dispatchapp, PID: 9501
+03-24 00:02:39.802  9501 15415 E AndroidRuntime: android.view.ViewRootImpl$CalledFromWrongThreadException: Only the original thread that created a view hierarchy can touch its views. Expected: main Calling: DefaultDispatcher-worker-1
+03-24 00:02:39.802  9501 15415 E AndroidRuntime: 	at android.view.ViewRootImpl.checkThread(ViewRootImpl.java:11592)
+03-24 00:02:39.802  9501 15415 E AndroidRuntime: 	at android.view.ViewRootImpl.focusableViewAvailable(ViewRootImpl.java:6688)
+03-24 00:02:39.802  9501 15415 E AndroidRuntime: 	at android.view.ViewGroup.focusableViewAvailable(ViewGroup.java:966)
+03-24 00:02:39.802  9501 15415 E AndroidRuntime: 	at android.view.ViewGroup.focusableViewAvailable(ViewGroup.java:966)
+03-24 00:02:39.802  9501 15415 E AndroidRuntime: 	at android.view.ViewGroup.focusableViewAvailable(ViewGroup.java:966)
+03-24 00:02:39.802  9501 15415 E AndroidRuntime: 	at android.view.ViewGroup.focusableViewAvailable(ViewGroup.java:966)
+03-24 00:02:39.802  9501 15415 E AndroidRuntime: 	at android.view.ViewGroup.focusableViewAvailable(ViewGroup.java:966)
+03-24 00:02:39.802  9501 15415 E AndroidRuntime: 	at android.view.ViewGroup.focusableViewAvailable(ViewGroup.java:966)
+03-24 00:02:39.802  9501 15415 E AndroidRuntime: 	at android.view.ViewGroup.focusableViewAvailable(ViewGroup.java:966)
+03-24 00:02:39.802  9501 15415 E AndroidRuntime: 	at android.view.ViewGroup.focusableViewAvailable(ViewGroup.java:966)
+03-24 00:02:39.802  9501 15415 E AndroidRuntime: 	at android.view.View.setFlags(View.java:18410)
+03-24 00:02:39.802  9501 15415 E AndroidRuntime: 	at android.view.View.setEnabled(View.java:13589)
+03-24 00:02:39.802  9501 15415 E AndroidRuntime: 	at android.widget.TextView.setEnabled(TextView.java:2509)
+03-24 00:02:39.802  9501 15415 E AndroidRuntime: 	at com.example.dispatchapp.Register$regist$1.invokeSuspend(Register.kt:84)
+03-24 00:02:39.802  9501 15415 E AndroidRuntime: 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+03-24 00:02:39.802  9501 15415 E AndroidRuntime: 	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:101)
+03-24 00:02:39.802  9501 15415 E AndroidRuntime: 	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:113)
+03-24 00:02:39.802  9501 15415 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+03-24 00:02:39.802  9501 15415 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:589)
+03-24 00:02:39.802  9501 15415 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:823)
+03-24 00:02:39.802  9501 15415 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:720)
+03-24 00:02:39.802  9501 15415 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:707)
+03-24 00:02:39.802  9501 15415 E AndroidRuntime: 	Suppressed: kotlinx.coroutines.internal.DiagnosticCoroutineContextException: [StandaloneCoroutine{Cancelling}@1a907c3, Dispatchers.IO]
+03-24 00:06:29.509 15234 16786 E AndroidRuntime: FATAL EXCEPTION: DefaultDispatcher-worker-1
+03-24 00:06:29.509 15234 16786 E AndroidRuntime: Process: com.example.dispatchapp, PID: 15234
+03-24 00:06:29.509 15234 16786 E AndroidRuntime: android.view.ViewRootImpl$CalledFromWrongThreadException: Only the original thread that created a view hierarchy can touch its views. Expected: main Calling: DefaultDispatcher-worker-1
+03-24 00:06:29.509 15234 16786 E AndroidRuntime: 	at android.view.ViewRootImpl.checkThread(ViewRootImpl.java:11592)
+03-24 00:06:29.509 15234 16786 E AndroidRuntime: 	at android.view.ViewRootImpl.focusableViewAvailable(ViewRootImpl.java:6688)
+03-24 00:06:29.509 15234 16786 E AndroidRuntime: 	at android.view.ViewGroup.focusableViewAvailable(ViewGroup.java:966)
+03-24 00:06:29.509 15234 16786 E AndroidRuntime: 	at android.view.ViewGroup.focusableViewAvailable(ViewGroup.java:966)
+03-24 00:06:29.509 15234 16786 E AndroidRuntime: 	at android.view.ViewGroup.focusableViewAvailable(ViewGroup.java:966)
+03-24 00:06:29.509 15234 16786 E AndroidRuntime: 	at android.view.ViewGroup.focusableViewAvailable(ViewGroup.java:966)
+03-24 00:06:29.509 15234 16786 E AndroidRuntime: 	at android.view.ViewGroup.focusableViewAvailable(ViewGroup.java:966)
+03-24 00:06:29.509 15234 16786 E AndroidRuntime: 	at android.view.ViewGroup.focusableViewAvailable(ViewGroup.java:966)
+03-24 00:06:29.509 15234 16786 E AndroidRuntime: 	at android.view.ViewGroup.focusableViewAvailable(ViewGroup.java:966)
+03-24 00:06:29.509 15234 16786 E AndroidRuntime: 	at android.view.ViewGroup.focusableViewAvailable(ViewGroup.java:966)
+03-24 00:06:29.509 15234 16786 E AndroidRuntime: 	at android.view.View.setFlags(View.java:18410)
+03-24 00:06:29.509 15234 16786 E AndroidRuntime: 	at android.view.View.setEnabled(View.java:13589)
+03-24 00:06:29.509 15234 16786 E AndroidRuntime: 	at android.widget.TextView.setEnabled(TextView.java:2509)
+03-24 00:06:29.509 15234 16786 E AndroidRuntime: 	at com.example.dispatchapp.Register$regist$1.invokeSuspend(Register.kt:84)
+03-24 00:06:29.509 15234 16786 E AndroidRuntime: 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+03-24 00:06:29.509 15234 16786 E AndroidRuntime: 	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:101)
+03-24 00:06:29.509 15234 16786 E AndroidRuntime: 	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:113)
+03-24 00:06:29.509 15234 16786 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+03-24 00:06:29.509 15234 16786 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:589)
+03-24 00:06:29.509 15234 16786 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:823)
+03-24 00:06:29.509 15234 16786 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:720)
+03-24 00:06:29.509 15234 16786 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:707)
+03-24 00:06:29.509 15234 16786 E AndroidRuntime: 	Suppressed: kotlinx.coroutines.internal.DiagnosticCoroutineContextException: [StandaloneCoroutine{Cancelling}@c5f44fa, Dispatchers.IO]
+03-24 00:08:43.445 15702 17355 E AndroidRuntime: FATAL EXCEPTION: DefaultDispatcher-worker-1
+03-24 00:08:43.445 15702 17355 E AndroidRuntime: Process: com.example.dispatchapp, PID: 15702
+03-24 00:08:43.445 15702 17355 E AndroidRuntime: android.view.ViewRootImpl$CalledFromWrongThreadException: Only the original thread that created a view hierarchy can touch its views. Expected: main Calling: DefaultDispatcher-worker-1
+03-24 00:08:43.445 15702 17355 E AndroidRuntime: 	at android.view.ViewRootImpl.checkThread(ViewRootImpl.java:11592)
+03-24 00:08:43.445 15702 17355 E AndroidRuntime: 	at android.view.ViewRootImpl.focusableViewAvailable(ViewRootImpl.java:6688)
+03-24 00:08:43.445 15702 17355 E AndroidRuntime: 	at android.view.ViewGroup.focusableViewAvailable(ViewGroup.java:966)
+03-24 00:08:43.445 15702 17355 E AndroidRuntime: 	at android.view.ViewGroup.focusableViewAvailable(ViewGroup.java:966)
+03-24 00:08:43.445 15702 17355 E AndroidRuntime: 	at android.view.ViewGroup.focusableViewAvailable(ViewGroup.java:966)
+03-24 00:08:43.445 15702 17355 E AndroidRuntime: 	at android.view.ViewGroup.focusableViewAvailable(ViewGroup.java:966)
+03-24 00:08:43.445 15702 17355 E AndroidRuntime: 	at android.view.ViewGroup.focusableViewAvailable(ViewGroup.java:966)
+03-24 00:08:43.445 15702 17355 E AndroidRuntime: 	at android.view.ViewGroup.focusableViewAvailable(ViewGroup.java:966)
+03-24 00:08:43.445 15702 17355 E AndroidRuntime: 	at android.view.ViewGroup.focusableViewAvailable(ViewGroup.java:966)
+03-24 00:08:43.445 15702 17355 E AndroidRuntime: 	at android.view.ViewGroup.focusableViewAvailable(ViewGroup.java:966)
+03-24 00:08:43.445 15702 17355 E AndroidRuntime: 	at android.view.View.setFlags(View.java:18410)
+03-24 00:08:43.445 15702 17355 E AndroidRuntime: 	at android.view.View.setEnabled(View.java:13589)
+03-24 00:08:43.445 15702 17355 E AndroidRuntime: 	at android.widget.TextView.setEnabled(TextView.java:2509)
+03-24 00:08:43.445 15702 17355 E AndroidRuntime: 	at com.example.dispatchapp.Register$regist$1.invokeSuspend(Register.kt:84)
+03-24 00:08:43.445 15702 17355 E AndroidRuntime: 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+03-24 00:08:43.445 15702 17355 E AndroidRuntime: 	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:101)
+03-24 00:08:43.445 15702 17355 E AndroidRuntime: 	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:113)
+03-24 00:08:43.445 15702 17355 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+03-24 00:08:43.445 15702 17355 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:589)
+03-24 00:08:43.445 15702 17355 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:823)
+03-24 00:08:43.445 15702 17355 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:720)
+03-24 00:08:43.445 15702 17355 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:707)
+03-24 00:08:43.445 15702 17355 E AndroidRuntime: 	Suppressed: kotlinx.coroutines.internal.DiagnosticCoroutineContextException: [StandaloneCoroutine{Cancelling}@192e0aa, Dispatchers.IO]
+03-24 00:11:11.067 15703 17904 E AndroidRuntime: FATAL EXCEPTION: DefaultDispatcher-worker-1
+03-24 00:11:11.067 15703 17904 E AndroidRuntime: Process: com.example.dispatchapp, PID: 15703
+03-24 00:11:11.067 15703 17904 E AndroidRuntime: java.lang.ExceptionInInitializerError
+03-24 00:11:11.067 15703 17904 E AndroidRuntime: 	at io.github.jan.supabase.network.KtorSupabaseHttpClient.<init>(KtorSupabaseHttpClient.kt:41)
+03-24 00:11:11.067 15703 17904 E AndroidRuntime: 	at io.github.jan.supabase.SupabaseClientImpl.<init>(SupabaseClient.kt:87)
+03-24 00:11:11.067 15703 17904 E AndroidRuntime: 	at io.github.jan.supabase.SupabaseClientBuilder.build(SupabaseClientBuilder.kt:79)
+03-24 00:11:11.067 15703 17904 E AndroidRuntime: 	at com.example.dispatch.SupabaseClient.<clinit>(SupabaseClient.kt:25)
+03-24 00:11:11.067 15703 17904 E AndroidRuntime: 	at com.example.dispatchapp.Register$regist$1.invokeSuspend(Register.kt:69)
+03-24 00:11:11.067 15703 17904 E AndroidRuntime: 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+03-24 00:11:11.067 15703 17904 E AndroidRuntime: 	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:101)
+03-24 00:11:11.067 15703 17904 E AndroidRuntime: 	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:113)
+03-24 00:11:11.067 15703 17904 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+03-24 00:11:11.067 15703 17904 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:589)
+03-24 00:11:11.067 15703 17904 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:823)
+03-24 00:11:11.067 15703 17904 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:720)
+03-24 00:11:11.067 15703 17904 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:707)
+03-24 00:11:11.067 15703 17904 E AndroidRuntime: 	Suppressed: kotlinx.coroutines.internal.DiagnosticCoroutineContextException: [StandaloneCoroutine{Cancelling}@f087833, Dispatchers.IO]
+03-24 00:11:11.067 15703 17904 E AndroidRuntime: Caused by: java.lang.IllegalStateException: Failed to find HTTP client engine implementation in the classpath: consider adding client engine dependency. See https://ktor.io/docs/http-client-engines.html
+03-24 00:11:11.067 15703 17904 E AndroidRuntime: 	at io.ktor.client.HttpClientJvmKt.<clinit>(HttpClientJvm.kt:43)
+03-24 00:11:11.067 15703 17904 E AndroidRuntime: 	... 13 more
+03-24 00:12:13.059 16282 18131 E AndroidRuntime: FATAL EXCEPTION: DefaultDispatcher-worker-1
+03-24 00:12:13.059 16282 18131 E AndroidRuntime: Process: com.example.dispatchapp, PID: 16282
+03-24 00:12:13.059 16282 18131 E AndroidRuntime: java.lang.ExceptionInInitializerError
+03-24 00:12:13.059 16282 18131 E AndroidRuntime: 	at io.github.jan.supabase.network.KtorSupabaseHttpClient.<init>(KtorSupabaseHttpClient.kt:41)
+03-24 00:12:13.059 16282 18131 E AndroidRuntime: 	at io.github.jan.supabase.SupabaseClientImpl.<init>(SupabaseClient.kt:87)
+03-24 00:12:13.059 16282 18131 E AndroidRuntime: 	at io.github.jan.supabase.SupabaseClientBuilder.build(SupabaseClientBuilder.kt:79)
+03-24 00:12:13.059 16282 18131 E AndroidRuntime: 	at com.example.dispatch.SupabaseClient.<clinit>(SupabaseClient.kt:25)
+03-24 00:12:13.059 16282 18131 E AndroidRuntime: 	at com.example.dispatchapp.Register$regist$1.invokeSuspend(Register.kt:68)
+03-24 00:12:13.059 16282 18131 E AndroidRuntime: 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+03-24 00:12:13.059 16282 18131 E AndroidRuntime: 	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:101)
+03-24 00:12:13.059 16282 18131 E AndroidRuntime: 	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:113)
+03-24 00:12:13.059 16282 18131 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+03-24 00:12:13.059 16282 18131 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:589)
+03-24 00:12:13.059 16282 18131 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:823)
+03-24 00:12:13.059 16282 18131 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:720)
+03-24 00:12:13.059 16282 18131 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:707)
+03-24 00:12:13.059 16282 18131 E AndroidRuntime: 	Suppressed: kotlinx.coroutines.internal.DiagnosticCoroutineContextException: [StandaloneCoroutine{Cancelling}@f087833, Dispatchers.IO]
+03-24 00:12:13.059 16282 18131 E AndroidRuntime: Caused by: java.lang.IllegalStateException: Failed to find HTTP client engine implementation in the classpath: consider adding client engine dependency. See https://ktor.io/docs/http-client-engines.html
+03-24 00:12:13.059 16282 18131 E AndroidRuntime: 	at io.ktor.client.HttpClientJvmKt.<clinit>(HttpClientJvm.kt:43)
+03-24 00:12:13.059 16282 18131 E AndroidRuntime: 	... 13 more
+03-24 00:12:56.998 17145 18308 E AndroidRuntime: FATAL EXCEPTION: DefaultDispatcher-worker-1
+03-24 00:12:56.998 17145 18308 E AndroidRuntime: Process: com.example.dispatchapp, PID: 17145
+03-24 00:12:56.998 17145 18308 E AndroidRuntime: java.lang.ExceptionInInitializerError
+03-24 00:12:56.998 17145 18308 E AndroidRuntime: 	at io.github.jan.supabase.network.KtorSupabaseHttpClient.<init>(KtorSupabaseHttpClient.kt:41)
+03-24 00:12:56.998 17145 18308 E AndroidRuntime: 	at io.github.jan.supabase.SupabaseClientImpl.<init>(SupabaseClient.kt:87)
+03-24 00:12:56.998 17145 18308 E AndroidRuntime: 	at io.github.jan.supabase.SupabaseClientBuilder.build(SupabaseClientBuilder.kt:79)
+03-24 00:12:56.998 17145 18308 E AndroidRuntime: 	at com.example.dispatch.SupabaseClient.<clinit>(SupabaseClient.kt:25)
+03-24 00:12:56.998 17145 18308 E AndroidRuntime: 	at com.example.dispatchapp.Register$regist$1.invokeSuspend(Register.kt:68)
+03-24 00:12:56.998 17145 18308 E AndroidRuntime: 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+03-24 00:12:56.998 17145 18308 E AndroidRuntime: 	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:101)
+03-24 00:12:56.998 17145 18308 E AndroidRuntime: 	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:113)
+03-24 00:12:56.998 17145 18308 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+03-24 00:12:56.998 17145 18308 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:589)
+03-24 00:12:56.998 17145 18308 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:823)
+03-24 00:12:56.998 17145 18308 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:720)
+03-24 00:12:56.998 17145 18308 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:707)
+03-24 00:12:56.998 17145 18308 E AndroidRuntime: 	Suppressed: kotlinx.coroutines.internal.DiagnosticCoroutineContextException: [StandaloneCoroutine{Cancelling}@345e217, Dispatchers.IO]
+03-24 00:12:56.998 17145 18308 E AndroidRuntime: Caused by: java.lang.IllegalStateException: Failed to find HTTP client engine implementation in the classpath: consider adding client engine dependency. See https://ktor.io/docs/http-client-engines.html
+03-24 00:12:56.998 17145 18308 E AndroidRuntime: 	at io.ktor.client.HttpClientJvmKt.<clinit>(HttpClientJvm.kt:43)
+03-24 00:12:56.998 17145 18308 E AndroidRuntime: 	... 13 more
+03-24 00:15:19.584 17810 18511 E AndroidRuntime: FATAL EXCEPTION: DefaultDispatcher-worker-1
+03-24 00:15:19.584 17810 18511 E AndroidRuntime: Process: com.example.dispatchapp, PID: 17810
+03-24 00:15:19.584 17810 18511 E AndroidRuntime: java.lang.ExceptionInInitializerError
+03-24 00:15:19.584 17810 18511 E AndroidRuntime: 	at io.github.jan.supabase.network.KtorSupabaseHttpClient.<init>(KtorSupabaseHttpClient.kt:41)
+03-24 00:15:19.584 17810 18511 E AndroidRuntime: 	at io.github.jan.supabase.SupabaseClientImpl.<init>(SupabaseClient.kt:87)
+03-24 00:15:19.584 17810 18511 E AndroidRuntime: 	at io.github.jan.supabase.SupabaseClientBuilder.build(SupabaseClientBuilder.kt:79)
+03-24 00:15:19.584 17810 18511 E AndroidRuntime: 	at com.example.dispatch.SupabaseClient.<clinit>(SupabaseClient.kt:25)
+03-24 00:15:19.584 17810 18511 E AndroidRuntime: 	at com.example.dispatchapp.Register$regist$1.invokeSuspend(Register.kt:68)
+03-24 00:15:19.584 17810 18511 E AndroidRuntime: 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+03-24 00:15:19.584 17810 18511 E AndroidRuntime: 	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:101)
+03-24 00:15:19.584 17810 18511 E AndroidRuntime: 	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:113)
+03-24 00:15:19.584 17810 18511 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+03-24 00:15:19.584 17810 18511 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:589)
+03-24 00:15:19.584 17810 18511 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:823)
+03-24 00:15:19.584 17810 18511 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:720)
+03-24 00:15:19.584 17810 18511 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:707)
+03-24 00:15:19.584 17810 18511 E AndroidRuntime: 	Suppressed: kotlinx.coroutines.internal.DiagnosticCoroutineContextException: [StandaloneCoroutine{Cancelling}@30452e6, Dispatchers.IO]
+03-24 00:15:19.584 17810 18511 E AndroidRuntime: Caused by: java.lang.IllegalStateException: Failed to find HTTP client engine implementation in the classpath: consider adding client engine dependency. See https://ktor.io/docs/http-client-engines.html
+03-24 00:15:19.584 17810 18511 E AndroidRuntime: 	at io.ktor.client.HttpClientJvmKt.<clinit>(HttpClientJvm.kt:43)
+03-24 00:15:19.584 17810 18511 E AndroidRuntime: 	... 13 more
+03-24 07:12:42.204 17717 20103 E AndroidRuntime: FATAL EXCEPTION: DefaultDispatcher-worker-1
+03-24 07:12:42.204 17717 20103 E AndroidRuntime: Process: com.example.dispatchapp, PID: 17717
+03-24 07:12:42.204 17717 20103 E AndroidRuntime: java.lang.ExceptionInInitializerError
+03-24 07:12:42.204 17717 20103 E AndroidRuntime: 	at com.example.dispatchapp.Register$regist$1.invokeSuspend(Register.kt:68)
+03-24 07:12:42.204 17717 20103 E AndroidRuntime: 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+03-24 07:12:42.204 17717 20103 E AndroidRuntime: 	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:101)
+03-24 07:12:42.204 17717 20103 E AndroidRuntime: 	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:113)
+03-24 07:12:42.204 17717 20103 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+03-24 07:12:42.204 17717 20103 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:589)
+03-24 07:12:42.204 17717 20103 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:823)
+03-24 07:12:42.204 17717 20103 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:720)
+03-24 07:12:42.204 17717 20103 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:707)
+03-24 07:12:42.204 17717 20103 E AndroidRuntime: 	Suppressed: kotlinx.coroutines.internal.DiagnosticCoroutineContextException: [StandaloneCoroutine{Cancelling}@a1c508, Dispatchers.IO]
+03-24 07:12:42.204 17717 20103 E AndroidRuntime: Caused by: java.lang.IllegalStateException: Method addObserver must be called on the main thread
+03-24 07:12:42.204 17717 20103 E AndroidRuntime: 	at androidx.lifecycle.LifecycleRegistry.enforceMainThreadIfNeeded(LifecycleRegistry.kt:304)
+03-24 07:12:42.204 17717 20103 E AndroidRuntime: 	at androidx.lifecycle.LifecycleRegistry.addObserver(LifecycleRegistry.kt:181)
+03-24 07:12:42.204 17717 20103 E AndroidRuntime: 	at io.github.jan.supabase.gotrue.SetupPlatformKt.addLifecycleCallbacks(setupPlatform.kt:33)
+03-24 07:12:42.204 17717 20103 E AndroidRuntime: 	at io.github.jan.supabase.gotrue.SetupPlatformKt.setupPlatform(setupPlatform.kt:25)
+03-24 07:12:42.204 17717 20103 E AndroidRuntime: 	at io.github.jan.supabase.gotrue.AuthImpl.init(AuthImpl.kt:80)
+03-24 07:12:42.204 17717 20103 E AndroidRuntime: 	at io.github.jan.supabase.SupabaseClientImpl.<init>(SupabaseClient.kt:96)
+03-24 07:12:42.204 17717 20103 E AndroidRuntime: 	at io.github.jan.supabase.SupabaseClientBuilder.build(SupabaseClientBuilder.kt:79)
+03-24 07:12:42.204 17717 20103 E AndroidRuntime: 	at com.example.dispatch.SupabaseClient.<clinit>(SupabaseClient.kt:25)
+03-24 07:12:42.204 17717 20103 E AndroidRuntime: 	... 9 more
+03-24 07:14:21.062 17897 21012 E AndroidRuntime: FATAL EXCEPTION: DefaultDispatcher-worker-1
+03-24 07:14:21.062 17897 21012 E AndroidRuntime: Process: com.example.dispatchapp, PID: 17897
+03-24 07:14:21.062 17897 21012 E AndroidRuntime: java.lang.ExceptionInInitializerError
+03-24 07:14:21.062 17897 21012 E AndroidRuntime: 	at com.example.dispatchapp.Register$regist$1.invokeSuspend(Register.kt:68)
+03-24 07:14:21.062 17897 21012 E AndroidRuntime: 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+03-24 07:14:21.062 17897 21012 E AndroidRuntime: 	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:101)
+03-24 07:14:21.062 17897 21012 E AndroidRuntime: 	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:113)
+03-24 07:14:21.062 17897 21012 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+03-24 07:14:21.062 17897 21012 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:589)
+03-24 07:14:21.062 17897 21012 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:823)
+03-24 07:14:21.062 17897 21012 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:720)
+03-24 07:14:21.062 17897 21012 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:707)
+03-24 07:14:21.062 17897 21012 E AndroidRuntime: 	Suppressed: kotlinx.coroutines.internal.DiagnosticCoroutineContextException: [StandaloneCoroutine{Cancelling}@2a5d89e, Dispatchers.IO]
+03-24 07:14:21.062 17897 21012 E AndroidRuntime: Caused by: java.lang.IllegalStateException: Method addObserver must be called on the main thread
+03-24 07:14:21.062 17897 21012 E AndroidRuntime: 	at androidx.lifecycle.LifecycleRegistry.enforceMainThreadIfNeeded(LifecycleRegistry.kt:304)
+03-24 07:14:21.062 17897 21012 E AndroidRuntime: 	at androidx.lifecycle.LifecycleRegistry.addObserver(LifecycleRegistry.kt:181)
+03-24 07:14:21.062 17897 21012 E AndroidRuntime: 	at io.github.jan.supabase.gotrue.SetupPlatformKt.addLifecycleCallbacks(setupPlatform.kt:33)
+03-24 07:14:21.062 17897 21012 E AndroidRuntime: 	at io.github.jan.supabase.gotrue.SetupPlatformKt.setupPlatform(setupPlatform.kt:25)
+03-24 07:14:21.062 17897 21012 E AndroidRuntime: 	at io.github.jan.supabase.gotrue.AuthImpl.init(AuthImpl.kt:80)
+03-24 07:14:21.062 17897 21012 E AndroidRuntime: 	at io.github.jan.supabase.SupabaseClientImpl.<init>(SupabaseClient.kt:96)
+03-24 07:14:21.062 17897 21012 E AndroidRuntime: 	at io.github.jan.supabase.SupabaseClientBuilder.build(SupabaseClientBuilder.kt:79)
+03-24 07:14:21.062 17897 21012 E AndroidRuntime: 	at com.example.dispatch.SupabaseClient.<clinit>(SupabaseClient.kt:25)
+03-24 07:14:21.062 17897 21012 E AndroidRuntime: 	... 9 more
