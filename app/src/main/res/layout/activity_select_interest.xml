@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/windowBackground"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Celebration Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:paddingTop="32dp"
+            android:paddingBottom="24dp">
+
+            <!-- Emoji Icon -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🎉"
+                android:textSize="72sp"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Selamat! -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Verifikasi Berhasil!"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:textColor="?android:attr/textColorPrimary"
+                android:gravity="center"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Subtitle -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kamu sudah terdaftar sebagai siswa SMKN 1 Jakarta.\nTinggal selangkah lagi!"
+                android:textSize="15sp"
+                android:textColor="?android:attr/textColorPrimary"
+                android:alpha="0.65"
+                android:gravity="center"
+                android:layout_marginBottom="8dp" />
+
+        </LinearLayout>
+
+        <!-- Step Indicator Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="?attr/colorPrimaryVariant">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/ic_verified"
+                    android:layout_marginEnd="12dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pilih Minat Bakatmu"
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        android:textColor="?android:attr/textColorPrimary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Kami akan merekomendasikan event yang sesuai"
+                        android:textSize="12sp"
+                        android:textColor="?android:attr/textColorPrimary"
+                        android:alpha="0.6" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Section Label -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pilih minimal 1 minat bakat"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="?android:attr/textColorPrimary"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Interest ChipGroup -->
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroupInterest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            app:chipSpacingHorizontal="8dp"
+            app:chipSpacingVertical="8dp"
+            app:singleSelection="false">
+
+            <!-- Chips will be added dynamically -->
+        </com.google.android.material.chip.ChipGroup>
+
+        <!-- Loading indicator -->
+        <ProgressBar
+            android:id="@+id/pbLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="16dp"
+            android:visibility="visible" />
+
+        <!-- Skip for now -->
+        <TextView
+            android:id="@+id/tvSkip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Lewati untuk sekarang →"
+            android:textSize="13sp"
+            android:textColor="?android:attr/textColorPrimary"
+            android:alpha="0.5"
+            android:paddingBottom="8dp"
+            android:paddingTop="4dp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Submit Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSaveInterest"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Mulai Eksplorasi! 🚀"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:backgroundTint="?attr/colorPrimaryVariant"
+            app:cornerRadius="50dp"
+            android:layout_marginBottom="32dp" />
+
+    </LinearLayout>
+</ScrollView>

@@ -48,7 +48,12 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val prefs = UserPreferences(requireContext())
-        setupViewPager()
+        
+        // Check if student is verified
+        val studentId = prefs.getStudentId()
+        val isStudentVerified = !studentId.isNullOrEmpty()
+        
+        setupViewPager(isStudentVerified)
 
         binding.userName.text = prefs.getUserName().toString().trim().substringBefore(" ")
         
@@ -77,26 +82,41 @@ class HomeFragment : Fragment() {
 
 
 
-    private fun setupViewPager() {
-        val adapter = object : FragmentStateAdapter(this) {
-            override fun getItemCount(): Int = 2
-
-            override fun createFragment(position: Int): Fragment {
-                return when (position) {
-                    0 -> InterestEventFragment()
-                    else -> AllEventFragment()
+    private fun setupViewPager(isStudentVerified: Boolean) {
+        if (isStudentVerified) {
+            // Show both tabs: Minat Bakat + Semua
+            binding.tabLayout.visibility = View.VISIBLE
+            binding.lineDivider.visibility = View.VISIBLE
+            
+            val adapter = object : FragmentStateAdapter(this) {
+                override fun getItemCount(): Int = 2
+                override fun createFragment(position: Int): Fragment {
+                    return when (position) {
+                        0 -> InterestEventFragment()
+                        else -> AllEventFragment()
+                    }
                 }
             }
-        }
-
-        binding.viewPager.adapter = adapter
-
-        TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
-            tab.text = when (position) {
-                0 -> "Minat Bakat"
-                else -> "Semua"
+            binding.viewPager.adapter = adapter
+            TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
+                tab.text = when (position) {
+                    0 -> "Minat Bakat"
+                    else -> "Semua"
+                }
+            }.attach()
+        } else {
+            // Not verified: only show Semua Event, hide tabs
+            binding.tabLayout.visibility = View.GONE
+            binding.lineDivider.visibility = View.GONE
+            
+            val adapter = object : FragmentStateAdapter(this) {
+                override fun getItemCount(): Int = 1
+                override fun createFragment(position: Int): Fragment {
+                    return AllEventFragment()
+                }
             }
-        }.attach()
+            binding.viewPager.adapter = adapter
+        }
     }
 
     private fun roleCheck(){

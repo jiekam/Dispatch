@@ -51,4 +51,10 @@ class UserPreferences(context: Context) {
 
     fun saveUserProdi(prodi: String) { prefs.edit().putString("user_prodi", prodi).apply() }
     fun getUserProdi(): String? { return prefs.getString("user_prodi", null) }
+
+    fun saveStudentName(name: String) { prefs.edit().putString("student_name", name).apply() }
+    fun getStudentName(): String? { return prefs.getString("student_name", null) }
+
+    fun saveDarkMode(enabled: Boolean) { prefs.edit().putBoolean("dark_mode", enabled).apply() }
+    fun isDarkMode(): Boolean { return prefs.getBoolean("dark_mode", false) }
 }
