@@ -1,3 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">DispatchApp</string>
+    <!-- App Name -->
+    <string name="app_name">Event Manager</string>
+
+    <!-- Bottom Navigation -->
+    <string name="home">Beranda</string>
+    <string name="events">Acara</string>
+    <string name="notifications">Notifikasi</string>
+    <string name="profile">Profil</string>
+
+    <!-- Home Fragment -->
+    <string name="greeting_organizer">Selamat Pagi,\nSiap mengelola acara?</string>
+    <string name="your_events">Event yang Anda buat</string>
+    <string name="create_new_event">Buat Acara Baru</string>
+    <string name="event_list_title">Daftar Acara Anda</string>
+    <string name="no_events">Belum ada acara</string>
+
+    <!-- Profile Fragment -->
+    <string name="edit_profile">Edit Profil</string>
+    <string name="account_info">Informasi Akun</string>
+    <string name="security">Keamanan</string>
+    <string name="help">Bantuan</string>
+    <string name="about">Tentang</string>
+    <string name="logout">Keluar</string>
+    <string name="organizer_name">Nama Pengelola</string>
+    <string name="organizer_badge">Pengelola</string>
+    <string name="verified_badge">Terverifikasi</string>
+    <string name="events_created">Acara Dibuat</string>
+    <string name="total_participants">Total Peserta</string>
+    <string name="rating">Rating</string>
+    <string name="manage_your_events">Kelola semua acara yang Anda buat</string>
+
+    <!-- Events List -->
+    <string name="my_events">Acara Saya</string>
+    <string name="search_events">Cari acara...</string>
+    <string name="filter">Filter</string>
+    <string name="all_events">Semua</string>
+    <string name="upcoming">Mendatang</string>
+    <string name="ongoing">Berlangsung</string>
+    <string name="finished">Selesai</string>
+
+    <!-- Event Detail -->
+    <string name="event_details">Detail Acara</string>
+    <string name="event_title">Compiler XII Telah Hadir</string>
+    <string name="event_description">Acara workshop terkait compiler dan teknologi terkini. Kami menghadirkan pembicara dari industri teknologi terkemuka untuk membagikan pengalaman mereka dalam pengembangan compiler dan optimization.</string>
+    <string name="event_image">Gambar Acara</string>
+    <string name="by">oleh</string>
+    <string name="date">Tanggal</string>
+    <string name="time">Waktu</string>
+    <string name="location">Lokasi</string>
+    <string name="category">Kategori</string>
+    <string name="description">Deskripsi</string>
+    <string name="registered_participants">Peserta Terdaftar</string>
+    <string name="of_quota">dari</string>
+    <string name="participant_avatar">Avatar Peserta</string>
+    <string name="participant_name">Nama Peserta</string>
+    <string name="attended">Telah Hadir</string>
+    <string name="registered_date">Tanggal Pendaftaran</string>
+    <string name="view_all_participants">Lihat Semua Peserta</string>
+    <string name="export">Ekspor</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Hapus</string>
+
+    <!-- General -->
+    <string name="profile_picture">Foto Profil</string>
+    <string name="settings">Pengaturan</string>
+    <string name="organizer">Pengelola</string>
+    <string name="participants">Peserta</string>
+    <string name="more_options">Opsi Lainnya</string>
+    <string name="navigate">Navigasi</string>
+    <string name="menu_icon">Ikon Menu</string>
+    <string name="info_icon">Ikon Info</string>
+
 </resources>

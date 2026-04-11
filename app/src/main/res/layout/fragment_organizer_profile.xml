@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_light">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Profile Card Header -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/spacing_12"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                android:background="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_16"
+                    android:gravity="center">
+
+                    <!-- Profile Picture with Badge -->
+                    <FrameLayout
+                        android:layout_width="120dp"
+                        android:layout_height="120dp">
+
+                        <ImageView
+                            android:id="@+id/iv_profile_picture"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_profile_placeholder"
+                            android:scaleType="centerCrop"
+                            android:contentDescription="@string/profile_picture" />
+
+                        <TextView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_gravity="bottom|end"
+                            android:layout_marginEnd="4dp"
+                            android:layout_marginBottom="4dp"
+                            android:text="👑"
+                            android:gravity="center"
+                            android:background="@drawable/badge_background"
+                            android:textSize="18sp" />
+
+                    </FrameLayout>
+
+                    <!-- Organizer Name & Status -->
+                    <TextView
+                        android:id="@+id/tv_organizer_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/organizer_name"
+                        android:textSize="18sp"
+                        android:textColor="@color/text_dark"
+                        android:textStyle="bold"
+                        android:marginTop="@dimen/spacing_12" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:marginTop="@dimen/spacing_8">
+
+                        <com.google.android.material.chip.Chip
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/organizer_badge"
+                            android:textColor="@color/white"
+                            android:layout_marginEnd="4dp"
+                            style="@style/Widget.MaterialComponents.Chip.Action"
+                            app:chipBackgroundColor="@color/organizer_color" />
+
+                        <com.google.android.material.chip.Chip
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/verified_badge"
+                            android:textColor="@color/white"
+                            style="@style/Widget.MaterialComponents.Chip.Action"
+                            app:chipBackgroundColor="@color/verified_color" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Stats Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/spacing_12"
+                android:paddingVertical="@dimen/spacing_8"
+                android:gravity="space_around">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="@dimen/spacing_8">
+
+                    <TextView
+                        android:id="@+id/tv_events_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="12"
+                        android:textSize="20sp"
+                        android:textColor="@color/primary_red"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/events_created"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_gray"
+                        android:marginTop="@dimen/spacing_4" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divider_color" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="@dimen/spacing_8">
+
+                    <TextView
+                        android:id="@+id/tv_participants_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="856"
+                        android:textSize="20sp"
+                        android:textColor="@color/primary_red"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/total_participants"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_gray"
+                        android:marginTop="@dimen/spacing_4" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divider_color" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="@dimen/spacing_8">
+
+                    <TextView
+                        android:id="@+id/tv_rating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4.8"
+                        android:textSize="20sp"
+                        android:textColor="@color/primary_red"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:marginTop="@dimen/spacing_4">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="⭐"
+                            android:textSize="12sp"
+                            android:layout_marginEnd="2dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/rating"
+                            android:textSize="12sp"
+                            android:textColor="@color/text_gray" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Menu Options -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:marginTop="@dimen/spacing_16">
+
+                <MenuItemLayout
+                    android:id="@+id/menu_edit_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    app:icon="@drawable/ic_edit"
+                    app:title="@string/edit_profile"
+                    app:showDivider="true" />
+
+                <MenuItemLayout
+                    android:id="@+id/menu_account_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    app:icon="@drawable/ic_info"
+                    app:title="@string/account_info"
+                    app:showDivider="true" />
+
+                <MenuItemLayout
+                    android:id="@+id/menu_security"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    app:icon="@drawable/ic_security"
+                    app:title="@string/security"
+                    app:showDivider="true" />
+
+                <MenuItemLayout
+                    android:id="@+id/menu_help"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    app:icon="@drawable/ic_help"
+                    app:title="@string/help"
+                    app:showDivider="true" />
+
+                <MenuItemLayout
+                    android:id="@+id/menu_about"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    app:icon="@drawable/ic_about"
+                    app:title="@string/about"
+                    app:showDivider="false" />
+
+            </LinearLayout>
+
+            <!-- Logout Button -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/spacing_12"
+                android:layout_marginTop="@dimen/spacing_20">
+
+                <Button
+                    android:id="@+id/btn_logout"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:text="@string/logout"
+                    android:textColor="@color/white"
+                    android:textAllCaps="false"
+                    android:textSize="14sp"
+                    android:backgroundTint="@color/primary_red"
+                    style="@style/Widget.MaterialComponents.Button" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

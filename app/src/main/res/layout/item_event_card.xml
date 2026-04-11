@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/spacing_12"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Event Image -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="140dp">
+
+            <ImageView
+                android:id="@+id/iv_event_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/placeholder_event_image"
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/event_image" />
+
+            <!-- Gradient Overlay -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/gradient_overlay" />
+
+            <!-- Status Badge -->
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|start"
+                android:layout_margin="@dimen/spacing_8"
+                android:text="@string/upcoming"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                style="@style/Widget.MaterialComponents.Chip.Action"
+                app:chipBackgroundColor="@color/status_upcoming" />
+
+        </FrameLayout>
+
+        <!-- Event Details -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_12">
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/tv_event_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/event_title"
+                android:textSize="15sp"
+                android:textColor="@color/text_dark"
+                android:textStyle="bold"
+                android:maxLines="2"
+                android:ellipsize="end" />
+
+            <!-- Date & Time -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:marginTop="@dimen/spacing_8">
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/ic_calendar"
+                    android:tint="@color/text_gray"
+                    android:contentDescription="@string/date" />
+
+                <TextView
+                    android:id="@+id/tv_event_date"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Sabtu, 14 Maret"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_gray"
+                    android:layout_marginStart="@dimen/spacing_6" />
+
+            </LinearLayout>
+
+            <!-- Location -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:marginTop="@dimen/spacing_6">
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/ic_location"
+                    android:tint="@color/text_gray"
+                    android:contentDescription="@string/location" />
+
+                <TextView
+                    android:id="@+id/tv_event_location"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Jakarta Selatan"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_gray"
+                    android:layout_marginStart="@dimen/spacing_6"
+                    android:maxLines="1"
+                    android:ellipsize="end" />
+
+            </LinearLayout>
+
+            <!-- Participants & Actions -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="space_between|center_vertical"
+                android:marginTop="@dimen/spacing_12">
+
+                <!-- Participants Count -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/ic_people"
+                        android:tint="@color/primary_red"
+                        android:contentDescription="@string/participants" />
+
+                    <TextView
+                        android:id="@+id/tv_participant_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="45/100"
+                        android:textSize="12sp"
+                        android:textColor="@color/primary_red"
+                        android:textStyle="bold"
+                        android:layout_marginStart="@dimen/spacing_6" />
+
+                </LinearLayout>
+
+                <!-- Action Button -->
+                <ImageButton
+                    android:id="@+id/btn_more_options"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_more_vert"
+                    android:scaleType="centerInside"
+                    android:background="@drawable/ripple_background"
+                    android:tint="@color/text_gray"
+                    android:contentDescription="@string/more_options" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
