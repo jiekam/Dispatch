@@ -34,7 +34,9 @@ data class Student(
     val kelas: String? = null,
     val jurusan: String? = null,
     val prodi: String? = null,
-    val nis: Long? = null
+    val nis: Long? = null,
+    @SerialName("student_name")
+    val studentName: String? = null
 )
 
 @Serializable
@@ -47,4 +49,19 @@ data class WishlistWithEvent(
     @SerialName("event_id")
     val eventId: Long,
     val events: Event? = null
+)
+
+@Serializable
+data class Interest(
+    val id: Long,
+    val interest: String
+)
+
+@Serializable
+data class UserInterest(
+    val id: Long? = null,
+    @SerialName("interest_id")
+    val interestId: Long,
+    @SerialName("id_student")
+    val idStudent: Int
 )
