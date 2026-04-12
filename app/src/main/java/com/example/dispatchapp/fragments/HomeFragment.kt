@@ -62,13 +62,10 @@ class HomeFragment : Fragment() {
             val avatarUrl = SupabaseClient.client.storage["user_profiles"].publicUrl("avatar_$uuid") + "?t=${System.currentTimeMillis()}"
             binding.userAvatar.load(avatarUrl) {
                 crossfade(true)
-                transformations(coil.transform.CircleCropTransformation())
                 error(com.example.dispatchapp.R.drawable.pfp)
             }
         } else {
-            binding.userAvatar.load(com.example.dispatchapp.R.drawable.pfp) {
-                transformations(coil.transform.CircleCropTransformation())
-            }
+            binding.userAvatar.load(com.example.dispatchapp.R.drawable.pfp)
         }
 
         binding.userAvatar.setOnClickListener {

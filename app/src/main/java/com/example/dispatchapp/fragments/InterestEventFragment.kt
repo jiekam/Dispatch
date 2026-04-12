@@ -81,8 +81,15 @@ class InterestEventFragment : Fragment() {
         viewLifecycleOwner.lifecycleScope.launch(Dispatchers.IO) {
             try {
                 val studentId = UserPreferences(requireContext()).getStudentId() ?: ""
-                if (studentId.isEmpty()) {
+                val studentIdInt = studentId.toIntOrNull()
+                if (studentIdInt == null) {
                     Log.w("InterestEventFragment", "Student ID is empty!")
+                    withContext(Dispatchers.Main) {
+                        if (!isAdded) return@withContext
+                        binding.rvPopularEvents.visibility = View.GONE
+                        binding.rvOtherEvents.visibility = View.GONE
+                    }
+                    return@launch
                 }
 
                 val currentDate = java.time.LocalDate.now().toString()
@@ -104,7 +111,7 @@ class InterestEventFragment : Fragment() {
                         )
                     ) {
                         filter {
-                            eq("event_tag.interest.user_interest.id_student", studentId.toInt())
+                            eq("event_tag.interest.user_interest.id_student", studentIdInt)
                             gte("end_date", currentDate)
                         }
                     }

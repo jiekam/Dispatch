@@ -57,4 +57,44 @@ class UserPreferences(context: Context) {
 
     fun saveDarkMode(enabled: Boolean) { prefs.edit().putBoolean("dark_mode", enabled).apply() }
     fun isDarkMode(): Boolean { return prefs.getBoolean("dark_mode", false) }
+
+    fun saveCurrentUserId(userId: String) {
+        prefs.edit().putString("current_user_id", userId).apply()
+    }
+
+    fun getCurrentUserId(): String? {
+        return prefs.getString("current_user_id", null)
+    }
+
+    fun clearStudentData() {
+        prefs.edit()
+            .remove("student_id")
+            .remove("user_nis")
+            .remove("user_kelas")
+            .remove("user_jurusan")
+            .remove("user_prodi")
+            .remove("student_name")
+            .apply()
+    }
+
+    fun clearProfileData() {
+        prefs.edit()
+            .remove("user_role")
+            .remove("user_email")
+            .remove("user_name")
+            .remove("user_avatar")
+            .apply()
+    }
+
+    fun clearUserDataKeepTheme() {
+        clearProfileData()
+        clearStudentData()
+        prefs.edit().remove("current_user_id").apply()
+    }
+    
+    fun clearAll() {
+        val darkMode = isDarkMode()
+        prefs.edit().clear().apply()
+        saveDarkMode(darkMode)
+    }
 }

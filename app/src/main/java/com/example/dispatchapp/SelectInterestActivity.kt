@@ -51,10 +51,21 @@ class SelectInterestActivity : BaseActivity() {
                     .select()
                     .decodeList<Interest>()
 
+                val userInterests = if (studentId != -1) {
+                    SupabaseClient.client.from("user_interest")
+                        .select { filter { eq("id_student", studentId) } }
+                        .decodeList<com.example.dispatchapp.models.UserInterest>()
+                } else {
+                    emptyList()
+                }
+                
+                val preSelectedIds = userInterests.map { it.interestId }.toSet()
+                selectedInterestIds.addAll(preSelectedIds)
+
                 withContext(Dispatchers.Main) {
                     binding.pbLoading.visibility = View.GONE
                     binding.chipGroupInterest.visibility = View.VISIBLE
-                    populateChips(interests)
+                    populateChips(interests, preSelectedIds)
                 }
             } catch (e: Exception) {
                 withContext(Dispatchers.Main) {
@@ -65,21 +76,45 @@ class SelectInterestActivity : BaseActivity() {
         }
     }
 
-    private fun populateChips(interests: List<Interest>) {
+    private fun populateChips(interests: List<Interest>, preSelectedIds: Set<Long>) {
         binding.chipGroupInterest.removeAllViews()
 
         interests.forEach { interest ->
             val chip = Chip(this).apply {
                 text = interest.interest
                 isCheckable = true
-                isCheckedIconVisible = true
-                chipBackgroundColor = android.content.res.ColorStateList.valueOf(
+                isCheckedIconVisible = false
+                isChecked = preSelectedIds.contains(interest.id)
+                
+                val states = arrayOf(
+                    intArrayOf(android.R.attr.state_checked),
+                    intArrayOf(-android.R.attr.state_checked)
+                )
+                val bgColors = intArrayOf(
+                    android.graphics.Color.parseColor("#10B981"), // Green when checked
                     android.graphics.Color.TRANSPARENT
                 )
-                setChipStrokeColorResource(android.R.color.darker_gray)
+                chipBackgroundColor = android.content.res.ColorStateList(states, bgColors)
+                
+                val strokeColors = intArrayOf(
+                    android.graphics.Color.TRANSPARENT,
+                    android.graphics.Color.DKGRAY
+                )
+                chipStrokeColor = android.content.res.ColorStateList(states, strokeColors)
+                
+                val textColors = intArrayOf(
+                    android.graphics.Color.WHITE,
+                    currentTextColor
+                )
+                setTextColor(android.content.res.ColorStateList(states, textColors))
+
                 chipStrokeWidth = 2f
                 textSize = 14f
-                setPadding(8, 4, 8, 4)
+                textAlignment = android.view.View.TEXT_ALIGNMENT_CENTER
+
+                // Use robust Chip padding for symmetry
+                chipStartPadding = 32f
+                chipEndPadding = 32f
 
                 setOnCheckedChangeListener { _, isChecked ->
                     if (isChecked) {

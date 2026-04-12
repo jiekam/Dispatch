@@ -66,4 +66,10 @@ class MainActivity : BaseActivity() {
             .replace(R.id.fragment_container, fragment)
             .commit()
     }
+
+    fun navigateToShowcaseWithPost(postId: Long) {
+        binding.bottomNavigation.selectedItemId = R.id.nav_showcase
+        val showcaseFragment = supportFragmentManager.findFragmentById(R.id.fragment_container) as? ShowcaseFragment
+        showcaseFragment?.scrollToPost(postId)
+    }
 }

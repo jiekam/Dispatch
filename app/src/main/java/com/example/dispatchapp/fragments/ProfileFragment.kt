@@ -38,21 +38,62 @@ import android.content.Intent
 import com.example.dispatchapp.SelectInterestActivity
 import io.github.jan.supabase.postgrest.postgrest
 import java.io.ByteArrayOutputStream
+import java.io.File
+import java.util.UUID
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import com.example.dispatchapp.utils.UsernamePolicy
+import com.yalantis.ucrop.UCrop
+
+import com.example.dispatchapp.adapters.MyPostAdapter
+import com.example.dispatchapp.models.Post
+import com.example.dispatchapp.models.PostLike
+import com.example.dispatchapp.models.PostComment
+import androidx.recyclerview.widget.LinearLayoutManager
+
+import com.example.dispatchapp.models.SavedPost
+import com.google.android.material.tabs.TabLayout
 
 class ProfileFragment : Fragment() {
 
     private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
 
+    private lateinit var myPostsAdapter: MyPostAdapter
+    private var isSavedTabSelected = false
+    private var isShowingAllPosts = false
+    private var latestPosts: List<Post> = emptyList()
+    private var latestLikeCounts: Map<Long, Int> = emptyMap()
+    private var latestCommentCounts: Map<Long, Int> = emptyMap()
+    private var pendingCropIsAvatar: Boolean? = null
+
     private val pickAvatarLauncher = registerForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri? ->
-        uri?.let { uploadImage(it, true) }
+        uri?.let { startCrop(it, true) }
     }
 
     private val pickBannerLauncher = registerForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri? ->
-        uri?.let { uploadImage(it, false) }
+        uri?.let { startCrop(it, false) }
+    }
+
+    private val cropImageLauncher = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        val isAvatar = pendingCropIsAvatar
+        pendingCropIsAvatar = null
+
+        if (isAvatar == null) return@registerForActivityResult
+
+        if (result.resultCode == Activity.RESULT_OK) {
+            val data = result.data
+            val outputUri = data?.let { UCrop.getOutput(it) }
+            if (outputUri != null) {
+                uploadImage(outputUri, isAvatar)
+            }
+        } else if (result.resultCode == UCrop.RESULT_ERROR) {
+            val errorMessage = result.data?.let { UCrop.getError(it)?.message } ?: "Gagal crop gambar"
+            Toast.makeText(requireContext(), errorMessage, Toast.LENGTH_SHORT).show()
+        }
     }
 
     private val verifyStudentLauncher = registerForActivityResult(
@@ -91,6 +132,7 @@ class ProfileFragment : Fragment() {
         // Check if student is verified (has student data)
         val studentId = prefs.getStudentId()
         val isVerified = !studentId.isNullOrEmpty()
+        val studentIdInt = studentId?.toIntOrNull()
 
         if (isVerified) {
             binding.cardNotVerified.visibility = View.GONE
@@ -108,11 +150,19 @@ class ProfileFragment : Fragment() {
             if (!studentName.isNullOrEmpty()) {
                 binding.tvStudentName.visibility = View.VISIBLE
                 binding.tvStudentName.text = "📋 $studentName (Nama di Kartu Pelajar)"
+            } else {
+                binding.tvStudentName.visibility = View.VISIBLE
+                binding.tvStudentName.text = "📋 SPECIAL ACCOUNT"
             }
             // Show interest section and load interests from DB
             binding.tvInterestSection.visibility = View.VISIBLE
             binding.cardInterest.visibility = View.VISIBLE
-            loadAndDisplayInterests(studentId!!.toInt())
+            if (studentIdInt != null) {
+                loadAndDisplayInterests(studentIdInt)
+            } else {
+                binding.tvNoInterest.visibility = View.VISIBLE
+                binding.tvNoInterest.text = "Data minat tidak valid"
+            }
         } else {
             binding.cardNotVerified.visibility = View.VISIBLE
             binding.cardInfoAkun.visibility = View.GONE
@@ -152,6 +202,81 @@ class ProfileFragment : Fragment() {
         binding.itemResetPassword.setOnClickListener { showResetPasswordDialog() }
 
         setupLogout()
+        
+        setupMyPosts()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        syncProfileFromServer()
+    }
+
+    private fun syncProfileFromServer() {
+        val uuid = SupabaseClient.client.auth.currentSessionOrNull()?.user?.id ?: return
+        val prefs = UserPreferences(requireContext())
+
+        viewLifecycleOwner.lifecycleScope.launch(Dispatchers.IO) {
+            try {
+                val profileResponse = SupabaseClient.client.from("profiles")
+                    .select(columns = Columns.list("username, role")) {
+                        filter { eq("id", uuid) }
+                    }
+                    .decodeSingleOrNull<com.example.dispatchapp.models.Profile>()
+
+                if (profileResponse != null) {
+                    profileResponse.username?.let { prefs.saveUserName(it) }
+                    profileResponse.role?.let { prefs.saveUserRole(it) }
+
+                    withContext(Dispatchers.Main) {
+                        if (!isAdded) return@withContext
+                        binding.tvProfileName.text = profileResponse.username ?: "—"
+                        binding.chipRole.text = when (profileResponse.role) {
+                            "student" -> "Siswa"
+                            "organizer" -> "Organizer"
+                            "student_informan" -> "Informan"
+                            else -> profileResponse.role ?: "—"
+                        }
+                    }
+                }
+            } catch (_: Exception) {
+            }
+        }
+    }
+
+    private fun startCrop(sourceUri: Uri, isAvatar: Boolean) {
+        val mimeType = requireContext().contentResolver.getType(sourceUri) ?: ""
+        if (mimeType.equals("image/gif", ignoreCase = true)) {
+            Toast.makeText(requireContext(), "GIF tidak mendukung crop, langsung diupload", Toast.LENGTH_SHORT).show()
+            uploadImage(sourceUri, isAvatar)
+            return
+        }
+
+        val destinationUri = Uri.fromFile(
+            File(requireContext().cacheDir, "crop_${UUID.randomUUID()}.jpg")
+        )
+
+        val options = UCrop.Options().apply {
+            setCompressionFormat(Bitmap.CompressFormat.JPEG)
+            setCompressionQuality(90)
+            setFreeStyleCropEnabled(false)
+        }
+
+        val cropIntent = if (isAvatar) {
+            UCrop.of(sourceUri, destinationUri)
+                .withAspectRatio(1f, 1f)
+                .withMaxResultSize(1080, 1080)
+                .withOptions(options)
+                .getIntent(requireContext())
+        } else {
+            UCrop.of(sourceUri, destinationUri)
+                .withAspectRatio(16f, 9f)
+                .withMaxResultSize(1920, 1080)
+                .withOptions(options)
+                .getIntent(requireContext())
+        }
+
+        pendingCropIsAvatar = isAvatar
+        cropImageLauncher.launch(cropIntent)
     }
 
     // =========================================================
@@ -385,13 +510,18 @@ class ProfileFragment : Fragment() {
         val avatarUrl = bucket.publicUrl("avatar_$uuid") + "?t=$timestamp"
         binding.ivProfileAvatar.load(avatarUrl, imageLoader) {
             crossfade(true)
-            transformations(coil.transform.CircleCropTransformation())
+            memoryCacheKey("avatar_$uuid")
+            diskCacheKey("avatar_$uuid")
             error(R.drawable.pfp)
+            size(300, 300) // downscale resolution for faster loading
         }
 
         val bannerUrl = bucket.publicUrl("banner_$uuid") + "?t=$timestamp"
         binding.ivProfileBanner.load(bannerUrl, imageLoader) {
             crossfade(true)
+            memoryCacheKey("banner_$uuid")
+            diskCacheKey("banner_$uuid")
+            size(800, 400) // downscale resolution
         }
     }
 
@@ -461,15 +591,7 @@ class ProfileFragment : Fragment() {
                 SupabaseClient.client.auth.signOut()
 
                 val prefs = UserPreferences(requireContext())
-                prefs.saveUserRole("")
-                prefs.saveUserEmail("")
-                prefs.saveUserName("")
-                prefs.saveStudentId("")
-                prefs.saveUserAvatarUrl("")
-                prefs.saveUserNis("")
-                prefs.saveUserKelas("")
-                prefs.saveUserJurusan("")
-                prefs.saveUserProdi("")
+                prefs.clearAll()
 
                 withContext(Dispatchers.Main) {
                     val intent = Intent(requireContext(), RoleSelection::class.java).apply {
@@ -492,6 +614,7 @@ class ProfileFragment : Fragment() {
         val prefs = UserPreferences(requireContext())
         val studentId = prefs.getStudentId()
         val isVerified = !studentId.isNullOrEmpty()
+        val studentIdInt = studentId?.toIntOrNull()
 
         if (isVerified) {
             binding.cardNotVerified.visibility = View.GONE
@@ -509,12 +632,20 @@ class ProfileFragment : Fragment() {
             if (!studentName.isNullOrEmpty()) {
                 binding.tvStudentName.visibility = View.VISIBLE
                 binding.tvStudentName.text = "📋 $studentName (Nama di Kartu Pelajar)"
+            } else {
+                binding.tvStudentName.visibility = View.VISIBLE
+                binding.tvStudentName.text = "📋 SPECIAL ACCOUNT"
             }
 
             // Show interest section
             binding.tvInterestSection.visibility = View.VISIBLE
             binding.cardInterest.visibility = View.VISIBLE
-            loadAndDisplayInterests(studentId!!.toInt())
+            if (studentIdInt != null) {
+                loadAndDisplayInterests(studentIdInt)
+            } else {
+                binding.tvNoInterest.visibility = View.VISIBLE
+                binding.tvNoInterest.text = "Data minat tidak valid"
+            }
         }
     }
 
@@ -545,7 +676,10 @@ class ProfileFragment : Fragment() {
                         binding.tvNoInterest.visibility = View.VISIBLE
                     } else {
                         binding.tvNoInterest.visibility = View.GONE
-                        selectedInterests.forEach { interest ->
+                        val displayList = selectedInterests.take(3)
+                        val remainingCount = selectedInterests.size - 3
+
+                        displayList.forEach { interest ->
                             val chip = com.google.android.material.chip.Chip(requireContext()).apply {
                                 text = interest.interest
                                 isClickable = false
@@ -553,6 +687,34 @@ class ProfileFragment : Fragment() {
                                 textSize = 13f
                             }
                             binding.chipGroupProfileInterest.addView(chip)
+                        }
+
+                        if (remainingCount > 0) {
+                            val extraChip = com.google.android.material.chip.Chip(requireContext()).apply {
+                                text = "+$remainingCount Lainnya"
+                                isClickable = true
+                                isCheckable = false
+                                textSize = 13f
+                                chipBackgroundColor = android.content.res.ColorStateList.valueOf(
+                                    android.graphics.Color.TRANSPARENT
+                                )
+                                setChipStrokeColorResource(android.R.color.darker_gray)
+                                chipStrokeWidth = 2f
+                                
+                                setOnClickListener {
+                                    binding.chipGroupProfileInterest.removeAllViews()
+                                    selectedInterests.forEach { interest ->
+                                        val fullChip = com.google.android.material.chip.Chip(requireContext()).apply {
+                                            text = interest.interest
+                                            isClickable = false
+                                            isCheckable = false
+                                            textSize = 13f
+                                        }
+                                        binding.chipGroupProfileInterest.addView(fullChip)
+                                    }
+                                }
+                            }
+                            binding.chipGroupProfileInterest.addView(extraChip)
                         }
                     }
 
@@ -604,12 +766,9 @@ class ProfileFragment : Fragment() {
 
         dialog.getButton(android.content.DialogInterface.BUTTON_POSITIVE).setOnClickListener {
             val newName = editText.text.toString().trim()
-            if (newName.isEmpty()) {
-                inputLayout.error = "Nama tidak boleh kosong"
-                return@setOnClickListener
-            }
-            if (newName.length < 3) {
-                inputLayout.error = "Nama minimal 3 karakter"
+            val usernameError = UsernamePolicy.validate(newName)
+            if (usernameError != null) {
+                inputLayout.error = usernameError
                 return@setOnClickListener
             }
 
@@ -626,24 +785,27 @@ class ProfileFragment : Fragment() {
 
             viewLifecycleOwner.lifecycleScope.launch(Dispatchers.IO) {
                 try {
-                    // Use proper UPDATE (PATCH) — only send the field we want to change
-                    // buildJsonObject ensures only username is patched, NOT null/missing fields
-                    SupabaseClient.client.from("profiles")
+                    val updatedProfile = SupabaseClient.client.from("profiles")
                         .update(
-                            kotlinx.serialization.json.buildJsonObject {
-                                put("username", kotlinx.serialization.json.JsonPrimitive(newName))
-                            }
+                            mapOf("username" to newName)
                         ) {
                             filter { eq("id", uuid) }
+                            select(columns = Columns.list("username, role"))
                         }
+                        .decodeSingleOrNull<com.example.dispatchapp.models.Profile>()
 
-                    // Update local prefs
-                    prefs.saveUserName(newName)
+                    if (updatedProfile == null || updatedProfile.username.isNullOrBlank()) {
+                        throw IllegalStateException("Nama profil gagal tersimpan di server")
+                    }
+
+                    prefs.saveUserName(updatedProfile.username)
+                    updatedProfile.role?.let { prefs.saveUserRole(it) }
 
                     withContext(Dispatchers.Main) {
                         dialog.dismiss()
-                        binding.tvProfileName.text = newName
+                        binding.tvProfileName.text = updatedProfile.username
                         Toast.makeText(requireContext(), "Nama profil diperbarui", Toast.LENGTH_SHORT).show()
+                        syncProfileFromServer()
                     }
                 } catch (e: Exception) {
                     withContext(Dispatchers.Main) {
@@ -651,6 +813,209 @@ class ProfileFragment : Fragment() {
                         dialog.getButton(android.content.DialogInterface.BUTTON_NEGATIVE).isEnabled = true
                         inputLayout.error = "Gagal: ${e.message}"
                     }
+                }
+            }
+        }
+    }
+
+    private fun setupMyPosts() {
+        myPostsAdapter = MyPostAdapter(
+            onItemClick = { post ->
+                val intent = Intent(requireContext(), com.example.dispatchapp.SinglePostActivity::class.java)
+                intent.putExtra("POST_ID", post.id)
+                startActivity(intent)
+            },
+            onDeleteClick = { post ->
+                val title = if (isSavedTabSelected) "Hapus dari Simpanan" else "Hapus Postingan"
+                val message = if (isSavedTabSelected) "Hapus postingan ini dari daftar simpanan?" else "Yakin ingin menghapus postingan ini?"
+                val positiveText = if (isSavedTabSelected) "Hapus" else "Hapus"
+                
+                MaterialAlertDialogBuilder(requireContext())
+                    .setTitle(title)
+                    .setMessage(message)
+                    .setPositiveButton(positiveText) { _, _ -> deleteMyPost(post) }
+                    .setNegativeButton("Batal", null)
+                    .show()
+            }
+        )
+        binding.rvMyPosts.layoutManager = LinearLayoutManager(requireContext())
+        binding.rvMyPosts.adapter = myPostsAdapter
+
+        binding.tvTogglePosts.setOnClickListener {
+            isShowingAllPosts = !isShowingAllPosts
+            renderPostsSection()
+        }
+        
+        binding.tabLayoutPosts.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab) {
+                isSavedTabSelected = tab.position == 1
+                isShowingAllPosts = false
+                loadMyPosts()
+            }
+            override fun onTabUnselected(tab: TabLayout.Tab) {}
+            override fun onTabReselected(tab: TabLayout.Tab) {}
+        })
+        
+        loadMyPosts()
+    }
+
+    private fun loadMyPosts() {
+        val currentUserId = SupabaseClient.client.auth.currentSessionOrNull()?.user?.id ?: return
+        
+        binding.tabLayoutPosts.visibility = View.VISIBLE
+        binding.rvMyPosts.visibility = View.VISIBLE
+        binding.pbMyPosts.visibility = View.VISIBLE
+        binding.tvEmptyMyPosts.visibility = View.GONE
+
+        viewLifecycleOwner.lifecycleScope.launch(Dispatchers.IO) {
+            try {
+                val posts = if (isSavedTabSelected) {
+                    val savedRaw = SupabaseClient.client.from("saved_posts")
+                        .select(columns = Columns.raw("*, posts(*)")) {
+                            filter { eq("user_id", currentUserId) }
+                            order("created_at", io.github.jan.supabase.postgrest.query.Order.DESCENDING)
+                        }.decodeList<SavedPost>()
+                    savedRaw.mapNotNull { it.posts }
+                } else {
+                    SupabaseClient.client.from("posts")
+                        .select(columns = Columns.raw("*")) {
+                            filter { eq("user_id", currentUserId) }
+                            order("created_at", io.github.jan.supabase.postgrest.query.Order.DESCENDING)
+                        }.decodeList<Post>()
+                }
+
+                if (posts.isEmpty()) {
+                    withContext(Dispatchers.Main) {
+                        latestPosts = emptyList()
+                        latestLikeCounts = emptyMap()
+                        latestCommentCounts = emptyMap()
+                        binding.pbMyPosts.visibility = View.GONE
+                        binding.tvEmptyMyPosts.visibility = View.VISIBLE
+                        binding.tvTogglePosts.visibility = View.GONE
+                        myPostsAdapter.setPosts(emptyList(), emptyMap(), emptyMap())
+                    }
+                    return@launch
+                }
+
+                val postIds = posts.map { it.id }
+
+                val likesData = SupabaseClient.client.from("post_likes")
+                    .select(columns = Columns.raw("post_id")) {
+                        filter { isIn("post_id", postIds) }
+                    }.decodeList<PostLike>()
+
+                val commentsData = SupabaseClient.client.from("post_comments")
+                    .select(columns = Columns.raw("post_id")) {
+                        filter { isIn("post_id", postIds) }
+                    }.decodeList<PostComment>()
+
+                val likeCounts = mutableMapOf<Long, Int>()
+                likesData.forEach { likeCounts[it.postId] = (likeCounts[it.postId] ?: 0) + 1 }
+
+                val commentCounts = mutableMapOf<Long, Int>()
+                commentsData.forEach { commentCounts[it.postId] = (commentCounts[it.postId] ?: 0) + 1 }
+
+                withContext(Dispatchers.Main) {
+                    latestPosts = posts
+                    latestLikeCounts = likeCounts
+                    latestCommentCounts = commentCounts
+                    binding.pbMyPosts.visibility = View.GONE
+                    binding.tvEmptyMyPosts.visibility = View.GONE
+                    renderPostsSection()
+                }
+
+            } catch (e: Exception) {
+                e.printStackTrace()
+                withContext(Dispatchers.Main) {
+                    latestPosts = emptyList()
+                    latestLikeCounts = emptyMap()
+                    latestCommentCounts = emptyMap()
+                    binding.pbMyPosts.visibility = View.GONE
+                    binding.tvEmptyMyPosts.visibility = View.VISIBLE
+                    binding.tvTogglePosts.visibility = View.GONE
+                    binding.tvEmptyMyPosts.text = "Gagal memuat postingan: ${e.message}"
+                }
+            }
+        }
+    }
+
+    private fun renderPostsSection() {
+        if (latestPosts.isEmpty()) {
+            binding.tvTogglePosts.visibility = View.GONE
+            myPostsAdapter.setPosts(emptyList(), emptyMap(), emptyMap())
+            return
+        }
+
+        val hasMoreThanThree = latestPosts.size > 3
+        val displayedPosts = if (hasMoreThanThree && !isShowingAllPosts) {
+            latestPosts.take(3)
+        } else {
+            latestPosts
+        }
+
+        val displayedIds = displayedPosts.map { it.id }.toSet()
+        val displayedLikeCounts = latestLikeCounts.filterKeys { it in displayedIds }
+        val displayedCommentCounts = latestCommentCounts.filterKeys { it in displayedIds }
+
+        myPostsAdapter.setPosts(displayedPosts, displayedLikeCounts, displayedCommentCounts)
+
+        if (hasMoreThanThree) {
+            binding.tvTogglePosts.visibility = View.VISIBLE
+            binding.tvTogglePosts.text = if (isShowingAllPosts) {
+                "Tampilkan lebih sedikit"
+            } else {
+                "Lihat selengkapnya (${latestPosts.size})"
+            }
+        } else {
+            binding.tvTogglePosts.visibility = View.GONE
+        }
+    }
+
+    private fun deleteMyPost(post: Post) {
+        binding.pbMyPosts.visibility = View.VISIBLE
+        val currentUserId = SupabaseClient.client.auth.currentSessionOrNull()?.user?.id
+
+        viewLifecycleOwner.lifecycleScope.launch(Dispatchers.IO) {
+            try {
+                if (isSavedTabSelected) {
+                    if (currentUserId != null) {
+                        SupabaseClient.client.from("saved_posts").delete {
+                            filter { 
+                                eq("post_id", post.id)
+                                eq("user_id", currentUserId)
+                            }
+                        }
+                    }
+                } else {
+                    // Delete from DB
+                    SupabaseClient.client.from("posts").delete {
+                        filter { eq("id", post.id) }
+                    }
+
+                    // Delete from Storage
+                    try {
+                        // Extract filename from URL
+                        // Example: .../storage/v1/object/public/showcase_media/UUID/16849302.jpg
+                        val urlParts = post.mediaUrl.split("showcase_media/")
+                        if (urlParts.size > 1) {
+                            val path = urlParts[1].substringBefore("?")
+                            SupabaseClient.client.storage["showcase_media"].delete(path)
+                        }
+                    } catch (e: Exception) {
+                        e.printStackTrace() // If storage delete fails, at least DB is deleted
+                    }
+                }
+
+                withContext(Dispatchers.Main) {
+                    binding.pbMyPosts.visibility = View.GONE
+                    Toast.makeText(context, if (isSavedTabSelected) "Dihapus dari daftar simpan" else "Postingan dihapus", Toast.LENGTH_SHORT).show()
+                    loadMyPosts() // Reload list
+                }
+            } catch (e: Exception) {
+                e.printStackTrace()
+                withContext(Dispatchers.Main) {
+                    binding.pbMyPosts.visibility = View.GONE
+                    Toast.makeText(context, "Gagal menghapus postingan", Toast.LENGTH_SHORT).show()
                 }
             }
         }

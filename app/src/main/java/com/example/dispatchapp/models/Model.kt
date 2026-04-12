@@ -53,7 +53,7 @@ data class WishlistWithEvent(
 
 @Serializable
 data class Interest(
-    val id: Long,
+    val id: Long = 0,
     val interest: String
 )
 
@@ -64,4 +64,58 @@ data class UserInterest(
     val interestId: Long,
     @SerialName("id_student")
     val idStudent: Int
+)
+
+@Serializable
+data class PostInterest(
+    val id: Long = 0,
+    @SerialName("post_id") val postId: Long = 0,
+    @SerialName("interest_id") val interestId: Long = 0,
+    val interest: Interest? = null
+)
+
+@Serializable
+data class Post(
+    val id: Long = 0,
+    @SerialName("user_id") val userId: String = "",
+    @SerialName("student_id") val studentId: Long = 0,
+    @SerialName("media_url") val mediaUrl: String = "",
+    @SerialName("media_type") val mediaType: String = "image",
+    val caption: String? = null,
+    @SerialName("project_description") val projectDescription: String? = null,
+    @SerialName("interest_id") val interestId: Long? = null,
+    @SerialName("created_at") val createdAt: String? = null,
+    val profiles: Profile? = null,
+    val students: Student? = null,
+    val interest: Interest? = null,
+    val post_interests: List<PostInterest>? = null
+)
+
+@Serializable
+data class SavedPost(
+    val id: Long = 0,
+    @SerialName("user_id") val userId: String = "",
+    @SerialName("post_id") val postId: Long = 0,
+    @SerialName("created_at") val createdAt: String? = null,
+    val posts: Post? = null
+)
+
+@Serializable
+data class PostLike(
+    val id: Long = 0,
+    @SerialName("post_id") val postId: Long = 0,
+    @SerialName("user_id") val userId: String = ""
+)
+
+@Serializable
+data class PostComment(
+    val id: Long = 0,
+    @SerialName("post_id") val postId: Long = 0,
+    @SerialName("user_id") val userId: String = "",
+    @SerialName("student_id") val studentId: Long = 0,
+    val content: String = "",
+    @SerialName("parent_id") val parentId: Long? = null,
+    @SerialName("created_at") val createdAt: String? = null,
+    val profiles: Profile? = null,
+    @kotlinx.serialization.Transient var replies: MutableList<PostComment> = mutableListOf()
 )

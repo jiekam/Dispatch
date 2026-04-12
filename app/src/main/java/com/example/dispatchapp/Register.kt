@@ -10,6 +10,7 @@ import com.example.dispatchapp.databinding.ActivityRegisterBinding
 import io.github.jan.supabase.auth.auth
 import io.github.jan.supabase.auth.providers.builtin.Email
 import io.github.jan.supabase.postgrest.postgrest
+import com.example.dispatchapp.utils.UsernamePolicy
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -51,6 +52,12 @@ class Register : BaseActivity() {
 
         if (password.length < 6) {
             Toast.makeText(this, "Password minimal 6 karakter!", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        val usernameError = UsernamePolicy.validate(name)
+        if (usernameError != null) {
+            Toast.makeText(this, usernameError, Toast.LENGTH_SHORT).show()
             return
         }
 

@@ -10,6 +10,7 @@ import com.example.dispatchapp.databinding.ActivityOtpVerificationBinding
 import io.github.jan.supabase.auth.OtpType
 import io.github.jan.supabase.auth.auth
 import io.github.jan.supabase.postgrest.postgrest
+import com.example.dispatchapp.utils.UsernamePolicy
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -48,6 +49,13 @@ class OtpVerification : BaseActivity() {
 
     private fun verifyOtp(otp: String) {
         binding.btnVerify.isEnabled = false
+
+        val usernameError = UsernamePolicy.validate(name)
+        if (usernameError != null) {
+            binding.btnVerify.isEnabled = true
+            Toast.makeText(this, usernameError, Toast.LENGTH_LONG).show()
+            return
+        }
 
         lifecycleScope.launch(Dispatchers.IO) {
             try {

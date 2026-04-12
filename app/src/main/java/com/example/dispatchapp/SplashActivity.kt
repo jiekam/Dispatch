@@ -38,16 +38,17 @@ class SplashActivity : AppCompatActivity() {
             try {
                 SupabaseClient.client.auth.awaitInitialization()
                 val session = SupabaseClient.client.auth.currentSessionOrNull()
+                val prefs = UserPreferences(this@SplashActivity)
 
                 if (session == null) {
+                    prefs.clearUserDataKeepTheme()
                     navigateTo(RoleSelection::class.java)
                     return@launch
                 }
 
                 SupabaseClient.client.auth.retrieveUserForCurrentSession(updateSession = true)
 
-                val prefs = UserPreferences(this@SplashActivity)
-                syncUserData(session.user?.id, prefs)
+                syncUserData(session.user?.id, session.user?.email, prefs)
 
                 navigateTo(MainActivity::class.java)
 
@@ -55,6 +56,7 @@ class SplashActivity : AppCompatActivity() {
                 Log.e("Splash", "Error detail: ${e.message}")
                 withContext(Dispatchers.Main) {
                     SupabaseClient.client.auth.clearSession()
+                    UserPreferences(this@SplashActivity).clearUserDataKeepTheme()
                     Toast.makeText(this@SplashActivity, "Sesi tidak valid", Toast.LENGTH_SHORT).show()
                     navigateTo(RoleSelection::class.java)
                 }
@@ -62,13 +64,20 @@ class SplashActivity : AppCompatActivity() {
         }
     }
 
-    private suspend fun syncUserData(uuid: String?, prefs: UserPreferences) {
+    private suspend fun syncUserData(uuid: String?, email: String?, prefs: UserPreferences) {
         if (uuid == null) return
+
+        if (prefs.getCurrentUserId() != uuid) {
+            prefs.clearUserDataKeepTheme()
+        }
+
+        prefs.saveCurrentUserId(uuid)
+        email?.let { prefs.saveUserEmail(it) }
 
         try {
             // Sync Student Data
             val studentResponse = SupabaseClient.client.from("students")
-                .select(columns = Columns.list("student_id, nis, kelas, jurusan, prodi")) {
+                .select(columns = Columns.list("student_id, nis, kelas, jurusan, prodi, student_name")) {
                     filter { eq("id", uuid) }
                 }.decodeSingleOrNull<Student>()
 
@@ -79,6 +88,9 @@ class SplashActivity : AppCompatActivity() {
                 studentResponse.kelas?.let { prefs.saveUserKelas(it) }
                 studentResponse.jurusan?.let { prefs.saveUserJurusan(it) }
                 studentResponse.prodi?.let { prefs.saveUserProdi(it) }
+                studentResponse.studentName?.let { prefs.saveStudentName(it) }
+            } else {
+                prefs.clearStudentData()
             }
 
             // Sync Profile Data
@@ -90,6 +102,9 @@ class SplashActivity : AppCompatActivity() {
             if (profileResponse != null) {
                 profileResponse.username?.let { prefs.saveUserName(it) }
                 profileResponse.role?.let { prefs.saveUserRole(it) }
+            } else {
+                prefs.clearProfileData()
+                email?.let { prefs.saveUserEmail(it) }
             }
         } catch (e: Exception) {
             Log.e("Splash", "Gagal sinkron data: ${e.localizedMessage}")

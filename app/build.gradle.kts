@@ -76,12 +76,18 @@ dependencies {
     implementation("io.ktor:ktor-client-okhttp:3.0.3")
     implementation("io.coil-kt:coil:2.7.0")
     implementation("io.coil-kt:coil-gif:2.7.0")
-    
+    implementation("io.coil-kt:coil-video:2.7.0")
+    implementation("com.github.yalantis:ucrop:2.2.8")
+
     implementation("com.russhwolf:multiplatform-settings-android:1.3.0")
 
     implementation("com.google.android.material:material:1.12.0")
     implementation("androidx.viewpager2:viewpager2:1.1.0")
     implementation("androidx.fragment:fragment-ktx:1.8.5")
+
+    // Media3 (ExoPlayer)
+    implementation("androidx.media3:media3-exoplayer:1.2.1")
+    implementation("androidx.media3:media3-ui:1.2.1")
 
     // CameraX
     implementation("androidx.camera:camera-core:1.4.2")

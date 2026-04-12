@@ -20,10 +20,20 @@
         android:theme="@style/Theme.DispatchApp"
         android:usesCleartextTraffic="true">
         <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
             android:name=".VerifyStudentActivity"
             android:exported="false" />
         <activity
             android:name=".SelectInterestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SearchReelsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UserProfileActivity"
             android:exported="false" />
         <activity
             android:name=".DetailEventActivity"
@@ -64,6 +74,12 @@
             android:exported="false" />
         <activity
             android:name=".fragments.HomeFragment"
+            android:exported="false" />
+        <activity
+            android:name=".CreatePostActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SinglePostActivity"
             android:exported="false" />
     </application>
 
