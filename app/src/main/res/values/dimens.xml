@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Spacing - 4dp increment system -->
+    <dimen name="spacing_4">4dp</dimen>
+    <dimen name="spacing_6">6dp</dimen>
+    <dimen name="spacing_8">8dp</dimen>
+    <dimen name="spacing_12">12dp</dimen>
+    <dimen name="spacing_16">16dp</dimen>
+    <dimen name="spacing_20">20dp</dimen>
+    <dimen name="spacing_24">24dp</dimen>
+    <dimen name="spacing_32">32dp</dimen>
+    <dimen name="spacing_56">56dp</dimen>
+
+    <!-- Text Sizes -->
+    <dimen name="text_size_10">10sp</dimen>
+    <dimen name="text_size_11">11sp</dimen>
+    <dimen name="text_size_12">12sp</dimen>
+    <dimen name="text_size_13">13sp</dimen>
+    <dimen name="text_size_14">14sp</dimen>
+    <dimen name="text_size_15">15sp</dimen>
+    <dimen name="text_size_16">16sp</dimen>
+    <dimen name="text_size_18">18sp</dimen>
+    <dimen name="text_size_20">20sp</dimen>
+    <dimen name="text_size_22">22sp</dimen>
+
+    <!-- Toolbar Height -->
+    <dimen name="toolbar_height">56dp</dimen>
+
+    <!-- Bottom Navigation Height -->
+    <dimen name="bottom_nav_height">56dp</dimen>
+
+    <!-- Corner Radius -->
+    <dimen name="corner_radius_8">8dp</dimen>
+    <dimen name="corner_radius_12">12dp</dimen>
+    <dimen name="corner_radius_16">16dp</dimen>
+
+    <!-- Icon Sizes -->
+    <dimen name="icon_size_16">16dp</dimen>
+    <dimen name="icon_size_20">20dp</dimen>
+    <dimen name="icon_size_24">24dp</dimen>
+    <dimen name="icon_size_32">32dp</dimen>
+    <dimen name="icon_size_48">48dp</dimen>
+
+    <!-- Button Heights -->
+    <dimen name="button_height">44dp</dimen>
+    <dimen name="button_height_small">32dp</dimen>
+
+</resources>

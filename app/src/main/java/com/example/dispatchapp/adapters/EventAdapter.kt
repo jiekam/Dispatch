@@ -101,9 +101,9 @@ class EventAdapter(
             binding.tvSmallUploader.text = event.profiles?.username ?: "Unknown"
 
             if (event.profiles?.role?.equals("organizer", ignoreCase = true) == true) {
-                binding.tvSmallIcVerif.visibility = android.view.View.VISIBLE
+                binding.ivSmallVerif.visibility = android.view.View.VISIBLE
             } else {
-                binding.tvSmallIcVerif.visibility = android.view.View.GONE
+                binding.ivSmallVerif.visibility = android.view.View.GONE
             }
 
             if (!event.bannerUrl.isNullOrEmpty()) {

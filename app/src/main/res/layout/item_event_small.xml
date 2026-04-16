@@ -45,7 +45,7 @@
                     android:textSize="12sp" />
 
                 <ImageView
-                    android:id="@+id/tvSmallIcVerif"
+                    android:id="@+id/ivSmallVerif"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     app:tint="@color/purple_200"

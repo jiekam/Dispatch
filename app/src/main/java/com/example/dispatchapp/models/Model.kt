@@ -5,7 +5,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class Event(
-    val id: Long,
+    val id: Long = 0,
     val title: String,
     val desc: String,
     @SerialName("banner_url")
@@ -17,14 +17,31 @@ data class Event(
     val location: String? = null,
     @SerialName("wishlist_count")
     val wishlistCount: Long = 0,
+    @SerialName("user_id")
+    val userId: String? = null,
+    @SerialName("registration_type")
+    val registrationType: String? = null,
+    @SerialName("max_participants")
+    val maxParticipants: Int? = null,
+    @SerialName("external_registration_url")
+    val externalRegistrationUrl: String? = null,
+    @SerialName("contact_type")
+    val contactType: String? = null,
+    @SerialName("contact_value")
+    val contactValue: String? = null,
     val profiles: Profile? = null
 )
 
 @Serializable
 data class Profile(
+    val id: String? = null,
     val username: String? = null,
     val role: String? = null,
-    val avatar: String? = null
+    val avatar: String? = null,
+    @SerialName("organization_name")
+    val organizationName: String? = null,
+    @SerialName("account_status")
+    val accountStatus: String? = null
 )
 
 @Serializable
@@ -37,6 +54,39 @@ data class Student(
     val nis: Long? = null,
     @SerialName("student_name")
     val studentName: String? = null
+)
+
+@Serializable
+data class EventRegistration(
+    val id: Long = 0,
+    @SerialName("event_id")
+    val eventId: Long,
+    @SerialName("user_id")
+    val userId: String,
+    @SerialName("registered_at")
+    val registeredAt: String? = null,
+    val status: String? = "pending",
+    val students: Student? = null,
+    val profiles: Profile? = null
+)
+
+@Serializable
+data class Notification(
+    val id: Long = 0,
+    val title: String,
+    val body: String,
+    @SerialName("created_at")
+    val createdAt: String? = null,
+    @SerialName("is_read")
+    val isRead: Boolean = false,
+    val type: String = "info",
+    @SerialName("reference_type")
+    val referenceType: String? = null,
+    @SerialName("reference_id")
+    val referenceId: Long? = null,
+    @SerialName("sender_id")
+    val senderId: String? = null,
+    val profiles: Profile? = null
 )
 
 @Serializable

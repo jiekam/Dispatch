@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_light">
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/header_dark"
+        app:title="@string/event_details"
+        app:titleTextColor="@color/text_dark"
+        app:navigationIcon="@drawable/ic_back" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Event Image -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp">
+
+                <ImageView
+                    android:id="@+id/iv_event_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/placeholder_event_image"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="@string/event_image" />
+
+                <!-- Status Badge -->
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_event_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|start"
+                    android:layout_margin="@dimen/spacing_12"
+                    android:text="@string/upcoming"
+                    android:textColor="@color/white"
+                    style="@style/Widget.MaterialComponents.Chip.Action"
+                    app:chipBackgroundColor="@color/status_upcoming" />
+
+            </FrameLayout>
+
+            <!-- Event Info Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/spacing_12"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_16">
+
+                    <!-- Event Title -->
+                    <TextView
+                        android:id="@+id/tv_event_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/event_title"
+                        android:textSize="18sp"
+                        android:textColor="@color/text_dark"
+                        android:textStyle="bold" />
+
+                    <!-- Organizer Info -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="@dimen/spacing_12">
+
+                        <ImageView
+                            android:id="@+id/iv_organizer_avatar"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:src="@drawable/ic_profile_placeholder"
+                            android:scaleType="centerCrop"
+                            android:contentDescription="@string/organizer" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_marginStart="@dimen/spacing_8">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/by"
+                                android:textSize="11sp"
+                                android:textColor="@color/text_gray" />
+
+                            <TextView
+                                android:id="@+id/tv_organizer_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/organizer_name"
+                                android:textSize="12sp"
+                                android:textColor="@color/text_dark"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <!-- Event Details (Date, Time, Location) -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="@dimen/spacing_16">
+
+                        <com.example.dispatchapp.InfoRow
+                            android:id="@+id/infoDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:icon="@drawable/ic_calendar"
+                            app:label="@string/date"
+                            app:value="Sabtu, 14 Maret" />
+
+                        <com.example.dispatchapp.InfoRow
+                            android:id="@+id/infoTime"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_8"
+                            app:icon="@drawable/ic_clock"
+                            app:label="@string/time"
+                            app:value="08:00 - 12:00 WIB" />
+
+                        <com.example.dispatchapp.InfoRow
+                            android:id="@+id/infoLocation"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_8"
+                            app:icon="@drawable/ic_location"
+                            app:label="@string/location"
+                            app:value="Universitas Bakrie, Jakarta Selatan" />
+
+                        <com.example.dispatchapp.InfoRow
+                            android:id="@+id/infoCategory"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_8"
+                            app:icon="@drawable/ic_category"
+                            app:label="@string/category"
+                            app:value="Informatika, UI/UX" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Description Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/spacing_12"
+                android:paddingVertical="@dimen/spacing_8">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/description"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_dark"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_event_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/event_description"
+                    android:textSize="13sp"
+                    android:textColor="@color/text_gray"
+                    android:lineSpacingMultiplier="1.4"
+                    android:layout_marginTop="@dimen/spacing_8" />
+
+            </LinearLayout>
+
+            <!-- Participants Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/spacing_12"
+                android:paddingVertical="@dimen/spacing_16">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="@dimen/spacing_12">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/registered_participants"
+                            android:textSize="14sp"
+                            android:textColor="@color/text_dark"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="@dimen/spacing_4">
+
+                            <TextView
+                                android:id="@+id/tvParticipantCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0 Mendaftar"
+                                android:textSize="12sp"
+                                android:textColor="@color/primary_red"
+                                android:textStyle="bold"
+                                android:layout_marginEnd="@dimen/spacing_8" />
+
+                            <TextView
+                                android:id="@+id/tv_wishlists_count"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0 Menyukai"
+                                android:textSize="12sp"
+                                android:textColor="@color/text_gray" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_export_list"
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        android:text="@string/export"
+                        android:textSize="11sp"
+                        android:paddingHorizontal="@dimen/spacing_12"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        app:strokeColor="@color/primary_red"
+                        app:cornerRadius="6dp" />
+
+                </LinearLayout>
+
+                <!-- Participants List -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_participants"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                <!-- View More Participants -->
+                <Button
+                    android:id="@+id/btn_view_all_participants"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="@string/view_all_participants"
+                    android:textColor="@color/primary_red"
+                    android:textAllCaps="false"
+                    android:textSize="13sp"
+                    android:backgroundTint="@color/white"
+                    android:layout_marginTop="@dimen/spacing_12"
+                    style="@style/Widget.MaterialComponents.Button" />
+
+            </LinearLayout>
+
+            <!-- Action Buttons -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/spacing_12"
+                android:paddingVertical="@dimen/spacing_16"
+                android:gravity="center_vertical">
+
+                <Button
+                    android:id="@+id/btn_edit_event"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"
+                    android:text="@string/edit"
+                    android:textColor="@color/primary_red"
+                    android:textAllCaps="false"
+                    android:textSize="13sp"
+                    android:layout_marginEnd="@dimen/spacing_8"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    app:strokeColor="@color/primary_red"
+                    app:cornerRadius="8dp" />
+
+                <Button
+                    android:id="@+id/btn_delete_event"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"
+                    android:text="@string/delete"
+                    android:textColor="@color/white"
+                    android:textAllCaps="false"
+                    android:textSize="13sp"
+                    android:backgroundTint="@color/error_color"
+                    style="@style/Widget.MaterialComponents.Button" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

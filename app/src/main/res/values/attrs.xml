@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="icon" format="reference" />
+    <attr name="label" format="string|reference" />
+    <attr name="value" format="string|reference" />
+    <attr name="title" format="string|reference" />
+    <attr name="showDivider" format="boolean" />
+
+    <declare-styleable name="InfoRow">
+        <attr name="icon" />
+        <attr name="label" />
+        <attr name="value" />
+    </declare-styleable>
+
+    <declare-styleable name="MenuItemLayout">
+        <attr name="icon" />
+        <attr name="title" />
+        <attr name="showDivider" />
+    </declare-styleable>
+</resources>

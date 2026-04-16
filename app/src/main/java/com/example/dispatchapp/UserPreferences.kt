@@ -17,6 +17,14 @@ class UserPreferences(context: Context) {
         prefs.edit().putString("user_name", name).apply()
     }
 
+    fun saveOrgName(name: String) {
+        prefs.edit().putString("org_name", name).apply()
+    }
+
+    fun saveAccountStatus(status: String) {
+        prefs.edit().putString("account_status", status).apply()
+    }
+
     fun getUserRole(): String? {
         return prefs.getString("user_role", null)
     }
@@ -27,6 +35,14 @@ class UserPreferences(context: Context) {
 
     fun getUserName(): String? {
         return prefs.getString("user_name", null)
+    }
+
+    fun getOrgName(): String? {
+        return prefs.getString("org_name", null)
+    }
+
+    fun getAccountStatus(): String? {
+        return prefs.getString("account_status", null)
     }
 
     fun saveStudentId(studentId: String) {

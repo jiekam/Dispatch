@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_light">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/header_dark"
+        android:padding="@dimen/spacing_16"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="@dimen/spacing_12">
+
+            <ImageView
+                android:id="@+id/iv_profile_pic"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_profile_placeholder"
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/profile_picture" />
+
+            <ImageView
+                android:id="@+id/iv_settings"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_settings"
+                android:tint="@color/text_light"
+                android:contentDescription="@string/settings" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/greeting_organizer"
+            android:textSize="22sp"
+            android:textColor="@color/text_dark"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/your_events"
+            android:textSize="13sp"
+            android:textColor="@color/text_gray"
+            android:layout_marginTop="@dimen/spacing_4" />
+
+    </LinearLayout>
+
+    <!-- Divider -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider_color" />
+
+    <!-- Create Event Button -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/spacing_12"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_create_event"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:text="@string/create_new_event"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:textSize="14sp"
+            android:backgroundTint="@color/primary_red"
+            style="@style/Widget.MaterialComponents.Button" />
+
+    </LinearLayout>
+
+    <!-- Events List -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/event_list_title"
+        android:textSize="14sp"
+        android:textColor="@color/text_dark"
+        android:textStyle="bold"
+        android:padding="@dimen/spacing_12" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_events"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingHorizontal="@dimen/spacing_12"
+        android:paddingVertical="@dimen/spacing_8"
+        android:clipToPadding="false"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    <!-- Empty State -->
+    <LinearLayout
+        android:id="@+id/empty_state"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_no_events"
+            android:tint="@color/text_gray"
+            android:contentDescription="@string/no_events" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_events"
+            android:textSize="16sp"
+            android:textColor="@color/text_gray"
+            android:layout_marginTop="@dimen/spacing_16" />
+
+    </LinearLayout>
+
+</LinearLayout>

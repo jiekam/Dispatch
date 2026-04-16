@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -18,7 +18,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DispatchApp"
-        android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="true" >
+        <activity
+            android:name=".OrganizerMainActivity"
+            android:exported="false"
+            android:label="@string/title_activity_organizer_home"
+            android:theme="@style/Theme.DispatchApp" />
+        <activity
+            android:name=".PendingApprovalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".OrganizerEventDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ParticipantListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NotificationActivity"
+            android:exported="false" />
         <activity
             android:name="com.yalantis.ucrop.UCropActivity"
             android:screenOrientation="portrait"
@@ -39,15 +56,9 @@
             android:name=".DetailEventActivity"
             android:exported="false" />
         <activity
-            android:name=".fragments.AllEventFragment"
-            android:exported="false" />
-        <activity
-            android:name=".fragments.InterestEventFragment"
-            android:exported="false" />
-        <activity
             android:name=".SplashActivity"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
+            android:theme="@style/Theme.AppCompat.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -73,14 +84,18 @@
             android:name=".Register"
             android:exported="false" />
         <activity
-            android:name=".fragments.HomeFragment"
-            android:exported="false" />
-        <activity
             android:name=".CreatePostActivity"
             android:exported="false" />
         <activity
             android:name=".SinglePostActivity"
             android:exported="false" />
+        <activity
+            android:name=".EditEventActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CreateEventActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>

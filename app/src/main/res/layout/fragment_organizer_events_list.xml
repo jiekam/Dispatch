@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_light">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/header_dark"
+        android:padding="@dimen/spacing_16"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/my_events"
+            android:textSize="22sp"
+            android:textColor="@color/text_dark"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/manage_your_events"
+            android:textSize="13sp"
+            android:textColor="@color/text_gray"
+            android:layout_marginTop="@dimen/spacing_4" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider_color" />
+
+    <!-- Filter & Search -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/spacing_12"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search_events"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/search_background"
+            android:layout_marginEnd="@dimen/spacing_8"
+            app:queryHint="@string/search_events"
+            app:iconifiedByDefault="false"
+            app:searchIcon="@drawable/ic_search" />
+
+        <ImageButton
+            android:id="@+id/btn_filter"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_filter"
+            android:background="@drawable/filter_button_background"
+            android:scaleType="centerInside"
+            android:contentDescription="@string/filter" />
+
+    </LinearLayout>
+
+    <!-- Tab Layout for Event Status -->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_event_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:tabMode="scrollable"
+        app:tabIndicatorColor="@color/primary_red"
+        app:tabSelectedTextColor="@color/primary_red"
+        app:tabTextColor="@color/text_gray">
+
+        <com.google.android.material.tabs.TabItem
+            android:text="@string/all_events" />
+
+        <com.google.android.material.tabs.TabItem
+            android:text="@string/upcoming" />
+
+        <com.google.android.material.tabs.TabItem
+            android:text="@string/ongoing" />
+
+        <com.google.android.material.tabs.TabItem
+            android:text="@string/finished" />
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <!-- Events List -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_my_events"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingHorizontal="@dimen/spacing_12"
+        android:paddingVertical="@dimen/spacing_8"
+        android:clipToPadding="false"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    <!-- Empty State -->
+    <LinearLayout
+        android:id="@+id/empty_state_events"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_no_events"
+            android:tint="@color/text_gray"
+            android:contentDescription="@string/no_events" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_events"
+            android:textSize="16sp"
+            android:textColor="@color/text_gray"
+            android:layout_marginTop="@dimen/spacing_16" />
+
+    </LinearLayout>
+
+</LinearLayout>
